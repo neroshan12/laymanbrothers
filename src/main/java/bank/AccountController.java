@@ -1,20 +1,19 @@
-package controllers;
+package bank;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import domain.Account;
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @Controller
-@RequestMapping("/accounts")
 public class AccountController {
-
 	@RequestMapping("/balance")
-	public String showBalance(Model model) {
-		Account account = new Account("Will", 1000);
-		model.addAttribute("account", account);
-		return "account/balance";
+	public String sayHi() {
+		System.out.println("Hello");
+		return "balance";
+		
 	}
-	
 }
+
