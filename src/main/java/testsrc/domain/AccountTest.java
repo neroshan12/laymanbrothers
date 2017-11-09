@@ -6,44 +6,33 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class AccountTest {
-
+	
+	private Account classUnderTest;
+	
 	@Before
 	public void setUp() throws Exception {
+		
+		classUnderTest = new Account("Will", 0);
 	}
 
-	@Test
-	public void testAccount() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testAccountStringInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetId() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		String result = "Will";
+		assertEquals(result, classUnderTest.getName());
 	}
 
-	@Test
-	public void testSetName() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testGetBalance() {
-		fail("Not yet implemented");
+		int result = 0;
+		assertEquals(result, classUnderTest.getBalance());
 	}
-
+	
 	@Test
-	public void testSetBalance() {
-		fail("Not yet implemented");
+	public void testDeposit() {
+		int result = 100;
+		classUnderTest.deposit(100);
+		assertEquals(result, classUnderTest.getBalance());
 	}
-
 }
