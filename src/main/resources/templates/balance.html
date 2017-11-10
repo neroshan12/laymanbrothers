@@ -6,8 +6,12 @@
 </head>
 <body>
     <h1 class='heading'>Welcome to Laymans brothers</h1>
-    <p>Your current account balance is: </p>
+    
+    <p>Welcome</p><p th:text="${accounts.getName()}"></p>
+    <h4 class='statement'>Your balance is</h4>
+    
+     <p th:text="${accounts.getBalance()}">
 
-    <h4 class='statement'>Statement</h4>
+    </p>
 </body>
 </html>
