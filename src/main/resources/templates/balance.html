@@ -13,5 +13,12 @@
      <p th:text="${accounts.getBalance()}">
 
     </p>
+    
+ 
+    
+    <form th:action="@{/balance}" method="post">
+    <input th:value="${amount}" name="amount" id="amount" type="number" />
+    <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
