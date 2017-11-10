@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @Controller
-public class AccountController {
-	@RequestMapping("/balance")
+public class WelcomeController {
+	@RequestMapping("/homepage")
 	public String initialize() {
-		return "balance";
+		return "homepage";
 	}
 }
