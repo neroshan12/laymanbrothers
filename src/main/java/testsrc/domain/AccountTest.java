@@ -11,9 +11,13 @@ public class AccountTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		
 		classUnderTest = new Account("Will", 0);
 	}
+	
+	@Test
+    public void account() {
+        assertTrue(classUnderTest instanceof Account);
+    }
 
 
 	@Test
@@ -33,6 +37,14 @@ public class AccountTest {
 	public void testDeposit() {
 		int result = 100;
 		classUnderTest.deposit(100);
+		assertEquals(result, classUnderTest.getBalance());
+	}
+	
+	@Test
+	public void testWithdraw() {
+		int result = 50;
+		classUnderTest.deposit(100);
+		classUnderTest.withdraw(50);
 		assertEquals(result, classUnderTest.getBalance());
 	}
 }

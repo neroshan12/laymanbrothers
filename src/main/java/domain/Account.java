@@ -15,9 +15,6 @@ public class Account {
 	private String name;
 	private int balance;
 	
-	public Account() {	
-	}
-	
 	public Account(String name, int balance) {
 		super();
 		this.name = name;
@@ -47,6 +44,10 @@ public class Account {
 	
 	public void deposit(int amount) {
 		balance += amount;
+	}
+	
+	public void withdraw(int amount) {
+		balance -= amount;
 	}
 	
 	
