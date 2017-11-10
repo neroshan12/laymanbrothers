@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AccountController {
 	@RequestMapping("/balance")
-	public String sayHi() {
+	public String initialize() {
 		return "balance";
 	}
 }
