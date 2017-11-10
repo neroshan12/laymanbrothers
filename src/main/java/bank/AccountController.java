@@ -26,10 +26,28 @@ public class AccountController {
 	}
 	
 	
-	@RequestMapping(value = "/balance", method = RequestMethod.POST)
+	@RequestMapping(value = "/deposit", method = RequestMethod.POST)
 	public String deposit(@ModelAttribute("amount") int amount) {
 		accountWill.deposit(amount);
 		return "redirect:/balance";
 	
+	}
+	
+	@RequestMapping(value = "/withdraw", method = RequestMethod.POST)
+	public String withdraw(@ModelAttribute("withdraw") int amount) {
+		accountWill.withdraw(amount);
+		return "redirect:/balance";
+	}
+	
+	@RequestMapping(value = "/deposit")
+	public String deposits(Model model) {
+		model.addAttribute("accounts", accountWill);
+		return "deposit";
+	}
+	
+	@RequestMapping(value = "/withdraw")
+	public String withdraws(Model model) {
+		model.addAttribute("accounts", accountWill);
+		return "withdraw";
 	}
 }
