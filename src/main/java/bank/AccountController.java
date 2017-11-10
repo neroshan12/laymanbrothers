@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AccountController {
 	@RequestMapping("/balance")
 	public String sayHi() {
-		System.out.println("Hello");
 		return "balance";
-		
 	}
 }
 
