@@ -20,9 +20,5 @@ class TransactionTest extends Transaction {
         assertTrue(classUnderTest instanceof Transaction);
     }
 	
-	@Test
-    public void transaction() {
-        assertTrue(classUnderTest instanceof Transaction);
-    }
 
 }
