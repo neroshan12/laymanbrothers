@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <h1 class='heading'>Welcome to Laymans brothers</h1>
+    <h1 class='heading'>Welcome to Laymans Brothers</h1>
     
     <p>Welcome</p><p th:text="${accounts.getName()}"></p>
     <h4 class='statement'>Your balance is</h4>
@@ -13,6 +13,9 @@
      <p th:text="${accounts.getBalance()}">
 
     </p>
+    
+    <a th:href="@{/withdraw}">Withdraw</a>
+    <a th:href="@{/deposit}">Deposit</a>
     
 </body>
 </html>

@@ -5,13 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <h1 class='heading'>Welcome to Laymans brothers</h1>
+    <h1 class='heading'>Welcome to Laymans Brothers</h1>
     
     <p>Welcome</p><p th:text="${accounts.getName()}"></p>
- 
+ 	<p>Amount to deposit:</p>
 	<form th:action="@{/withdraw}" method="post">
     <input th:value="${amount}" name="withdraw" id="withdraw" type="number" />
     <button type="submit">Withdraw</button>
     </form>
+    
+    <a th:href="@{/balance}">Go Back to Account</a>
 </body>
 </html>
