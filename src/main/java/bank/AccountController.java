@@ -50,4 +50,11 @@ public class AccountController {
 		model.addAttribute("accounts", accountWill);
 		return "withdraw";
 	}
+	
+	@RequestMapping(value = "/admin")
+	public String admin(Model model) {
+		model.addAttribute("accounts", accountWill);
+		return "admin";
+	}
+	
 }
