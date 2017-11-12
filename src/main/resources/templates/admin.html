@@ -7,12 +7,23 @@
 <body>
     <h1 class='heading'>Admin page</h1>
     
-    <p>Account: </p><p th:text="${accounts.getName()}"></p>
-      <p>Account: </p><p th:text="${accounts1.getName()}"></p>
-      <p>Account: </p><p th:text="${accounts2.getName()}"></p>
-      <p>Account: </p><p th:text="${accounts3.getName()}"></p>
-      <p>Account: </p><p th:text="${accounts4.getName()}"></p>
-      <p>Account: </p><p th:text="${accounts5.getName()}"></p>
-  
+   	  <p>Name: </p><p th:text="${accounts.getName()}"></p>
+   	  <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+   	  
+      <p>Name: </p><p th:text="${accounts1.getName()}"></p>
+      <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+      
+      <p>Name: </p><p th:text="${accounts2.getName()}"></p>
+      <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+      
+      <p>Name: </p><p th:text="${accounts3.getName()}"></p>
+      <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+      
+      <p>Name: </p><p th:text="${accounts4.getName()}"></p>
+      <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+      
+      <p>Name: </p><p th:text="${accounts5.getName()}"></p>
+   	  <p>Balance: </p><p th:text="${accounts.getBalance()}"></p>
+
 </body>
 </html>
