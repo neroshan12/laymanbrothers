@@ -18,6 +18,12 @@ public class AccountController {
 	
 	
 	Account accountWill = new Account("Will", 0);
+	Account accountJoe = new Account("Joe", 10);
+	Account accountKeith = new Account("Keith", 20);
+	Account accountMarcus = new Account("Marcus", 30);
+	Account accountEtienne = new Account("Etienne", 40);
+	Account accountNero = new Account ("Nero", 50);
+
 	
 	@RequestMapping(value = "/balance")
 	public String accounts(Model model) {
@@ -54,6 +60,12 @@ public class AccountController {
 	@RequestMapping(value = "/admin")
 	public String admin(Model model) {
 		model.addAttribute("accounts", accountWill);
+		model.addAttribute("accounts1", accountJoe);
+		model.addAttribute("accounts2", accountKeith);
+		model.addAttribute("accounts3", accountMarcus);
+		model.addAttribute("accounts4", accountEtienne);
+		model.addAttribute("accounts5", accountNero);
+
 		return "admin";
 	}
 	
