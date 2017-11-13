@@ -33,7 +33,6 @@ public class CurrentAccount {
 		this.balance = balance;
 	}
 	
-	
 	public void deposit(double amount) {
 		balance += amount;
 	}

@@ -19,8 +19,4 @@ public class Transaction {
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
-	
-
-	
-	
 }

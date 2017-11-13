@@ -7,13 +7,13 @@
 <body>
     <h1 class='heading'>Welcome to Laymans Brothers</h1>
     
-    <p>Welcome</p><p th:text="${accounts.getName()}"></p>
-    <h4 class='statement'>Your balance is</h4>
+     <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
+    <h4 class='statement'>Your Current Account balance is</h4>
     
-     <p th:text="${accounts.getBalance()}">
+     <p th:text="${user.getBalance()}">
 
     </p>
-    
+     
     <a th:href="@{/withdraw}">Withdraw</a>
     <a th:href="@{/deposit}">Deposit</a>
     

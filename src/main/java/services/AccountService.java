@@ -8,7 +8,6 @@ public interface AccountService {
 
 	CurrentAccount createAccount();
 	
-
     void deposit(CurrentAccount account, double amount, Principal principal);    
     void withdraw(CurrentAccount account, double amount, Principal principal);
 }
