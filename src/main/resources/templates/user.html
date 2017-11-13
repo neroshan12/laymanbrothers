@@ -6,10 +6,10 @@
 </head>
 <body>
 	<h1>Your Details:</h1>
-    <p th:text="'First Name: ' + ${user.firstName}" />
-    <p th:text="'Last Name: ' + ${user.lastName}" />
-    <p th:text="'Email: ' + ${user.email}" />
-    <p th:text="'User name: ' + ${user.username}" />
-    <a href="/balance">View your accounts</a>
+    <p th:text="'First Name: ' + ${user.getFirstName()}" /> 
+     <p th:text="'Last Name: ' + ${user.getLastName()}" />
+    <p th:text="'Email: ' + ${user.getEmail()}" />
+    <p th:text="'User name: ' + ${user.getUsername()}" /> 
+    <a href="/balance">View your accounts</a> 
 </body>
 </html>
