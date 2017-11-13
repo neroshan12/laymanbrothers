@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import domain.Account;
+import domain.Transaction;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
@@ -16,12 +17,23 @@ import domain.Account;
 @Controller
 public class AccountController {
 	
+<<<<<<< HEAD
 	Account accountWill = new Account("Will", 0);
 	Account accountJoe = new Account("Joe", 10);
 	Account accountKeith = new Account("Keith", 20);
 	Account accountMarcus = new Account("Marcus", 30);
 	Account accountEtienne = new Account("Etienne", 40);
 	Account accountNero = new Account ("Nero", 50);
+=======
+	Transaction[] transArray = {new Transaction(10), new Transaction(100)};
+	
+	Account accountWill = new Account("Will", 0, transArray);
+	Account accountJoe = new Account("Joe", 10, transArray);
+	Account accountKeith = new Account("Keith", 20, transArray);
+	Account accountMarcus = new Account("Marcus", 30, transArray);
+	Account accountEtienne = new Account("Etienne", 40, transArray);
+	Account accountNero = new Account ("Nero", 50, transArray);
+>>>>>>> 6688d2bfacdf4cc8e6587ffae6a7e844d6ea5a0a
 
 	
 	@RequestMapping(value = "/balance")
@@ -30,6 +42,11 @@ public class AccountController {
 		return "balance";
 	}
 	
+	@RequestMapping(value = "/deposit")
+	public String deposits(Model model) {
+		model.addAttribute("accounts", accountWill);
+		return "deposit";
+	}
 	
 	@RequestMapping(value = "/deposit", method = RequestMethod.POST)
 	public String deposit(@ModelAttribute("amount") int amount) {
@@ -38,23 +55,24 @@ public class AccountController {
 	
 	}
 	
+	@RequestMapping(value = "/withdraw")
+	public String withdraws(Model model) {
+		model.addAttribute("accounts", accountWill);
+		return "withdraw";
+	}
+	
 	@RequestMapping(value = "/withdraw", method = RequestMethod.POST)
 	public String withdraw(@ModelAttribute("withdraw") int amount) {
 		accountWill.withdraw(amount);
 		return "redirect:/balance";
 	}
 	
-	@RequestMapping(value = "/deposit")
-	public String deposits(Model model) {
+	@RequestMapping(value = "/transactions")
+	public String transactions(Model model) {
 		model.addAttribute("accounts", accountWill);
-		return "deposit";
+		return "transactions";
 	}
-	
-	@RequestMapping(value = "/withdraw")
-	public String withdraws(Model model) {
-		model.addAttribute("accounts", accountWill);
-		return "withdraw";
-	}
+
 	
 	@RequestMapping(value = "/admin")
 	public String admin(Model model) {
