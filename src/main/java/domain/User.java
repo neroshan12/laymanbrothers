@@ -5,17 +5,16 @@ package domain;
 	public class User {
 	
 	
-	private final String firstName;
+	private String firstName;
 	
 	
-	private final String lastName;
+	private String lastName;
 	
 	
-	private final String email;
+	private String email;
 	
 	
-	private final String username;
-	
+	private String username;
 	
 	
 	public User( String firstName, String lastName, String email, String username) {
@@ -30,7 +29,9 @@ package domain;
 		
 	}
 	
-	
+	public User() {
+		
+	}
 	
 	public String getFirstName() {
 	
