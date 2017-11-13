@@ -13,7 +13,7 @@ public class SavingsAccount {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String name;
-	private int balance;
+	int balance;
 	private Transaction[] transactions;
 
 	public SavingsAccount(int balance, Transaction[] transactions) {

@@ -47,6 +47,16 @@ public class User {
 	public void openSavingsAccount() {
 		savingsAccount = new SavingsAccount(0, null);
     }
+	
+	public void transferToSaving(int amount) {
+		currentAccount.balance -= amount;
+		savingsAccount.balance += amount;
+	}
+	
+	public void transferToCurrent(int amount) {
+		savingsAccount.balance -= amount;
+		currentAccount.balance += amount;
+	}
 
 }
 

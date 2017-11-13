@@ -13,7 +13,7 @@ public class CurrentAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private int balance;
+	int balance;
 	public List<Transaction> transactions;
 
 	public CurrentAccount(int balance) {
