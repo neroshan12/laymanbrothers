@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class SavingsAccount {
 	
@@ -57,6 +56,5 @@ public class SavingsAccount {
 	public void addInterest() {
 		balance *= 1.005;		
 	}
-	
 }
 

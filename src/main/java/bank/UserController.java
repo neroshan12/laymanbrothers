@@ -14,12 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import domain.User;
 
-
 @Controller
 public class UserController {
 
 	ArrayList<User> someList = new ArrayList<User>();
-//	User user = new User("Will", "Cabangon", "will@will.com", "will_will");
 	
 	@RequestMapping(value = "/newUser")
 	public String userForm() {
