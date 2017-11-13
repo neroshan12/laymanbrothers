@@ -33,6 +33,38 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+   <!--  required dependencies for assertj and phantomjs -->     
+        <dependency>
+          <groupId>org.fluentlenium</groupId>
+          <artifactId>fluentlenium-assertj</artifactId>
+          <version>0.10.3</version>
+        </dependency>
+        <dependency>
+          <groupId>com.github.detro</groupId>
+          <artifactId>phantomjsdriver</artifactId>
+          <version>1.2.0</version>
+        </dependency>
+        <dependency>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+          <version>1.4.01</version>
+        </dependency>
+        <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>1.7.0</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+         </dependency>
+         <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <scope>test</scope>
+         </dependency>
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -49,6 +81,24 @@
 
 
 	</dependencies>
+	
+	<!--  Plug-in needed for integration tests to run on PhantomJS -->
+	
+	<plugin>
+  <groupId>com.github.klieber</groupId>
+  <artifactId>phantomjs-maven-plugin</artifactId>
+  <version>0.4</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>install</goal>
+      </goals>
+    </execution>
+  </executions>
+  <configuration>
+    <version>1.9.8</version>
+  </configuration>
+</plugin>
 
 	<properties>
 		<java.version>1.8</java.version>
