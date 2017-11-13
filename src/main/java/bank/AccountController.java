@@ -17,6 +17,7 @@ import domain.Transaction;
 @Controller
 public class AccountController {
 	
+<<<<<<< HEAD
 	Transaction[] transArray = {new Transaction(10), new Transaction(100)};
 	
 	CurrentAccount accountWill = new CurrentAccount(0);
@@ -25,6 +26,14 @@ public class AccountController {
 	CurrentAccount accountMarcus = new CurrentAccount(0);
 	CurrentAccount accountEtienne = new CurrentAccount(0);
 	CurrentAccount accountNero = new CurrentAccount(0);
+=======
+	Account accountWill = new Account("Will", 0);
+	Account accountJoe = new Account("Joe", 10);
+	Account accountKeith = new Account("Keith", 20);
+	Account accountMarcus = new Account("Marcus", 30);
+	Account accountEtienne = new Account("Etienne", 40);
+	Account accountNero = new Account ("Nero", 50);
+>>>>>>> Minor change to test git output
 
 	
 	@RequestMapping(value = "/balance")
