@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import domain.Account;
+import domain.CurrentAccount;
 import domain.Transaction;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
@@ -19,12 +19,12 @@ public class AccountController {
 	
 	Transaction[] transArray = {new Transaction(10), new Transaction(100)};
 	
-	Account accountWill = new Account("Will", 0, transArray);
-	Account accountJoe = new Account("Joe", 10, transArray);
-	Account accountKeith = new Account("Keith", 20, transArray);
-	Account accountMarcus = new Account("Marcus", 30, transArray);
-	Account accountEtienne = new Account("Etienne", 40, transArray);
-	Account accountNero = new Account ("Nero", 50, transArray);
+	CurrentAccount accountWill = new CurrentAccount(0);
+	CurrentAccount accountJoe = new CurrentAccount(0);
+	CurrentAccount accountKeith = new CurrentAccount(0);
+	CurrentAccount accountMarcus = new CurrentAccount(0);
+	CurrentAccount accountEtienne = new CurrentAccount(0);
+	CurrentAccount accountNero = new CurrentAccount(0);
 
 	
 	@RequestMapping(value = "/balance")

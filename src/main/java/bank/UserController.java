@@ -14,7 +14,7 @@ public class UserController {
 	
 	@GetMapping(value = "/newUser")
 	public String userForm(Model model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("user", new User(null, null, null, null));
 		return "newUser";
 	}
 	@PostMapping("/newUser")

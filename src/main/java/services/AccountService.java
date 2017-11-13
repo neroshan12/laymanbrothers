@@ -2,13 +2,13 @@ package services;
 
 import java.security.Principal;
 
-import domain.Account;
+import domain.CurrentAccount;
 
 public interface AccountService {
 
-	Account createAccount();
+	CurrentAccount createAccount();
 	
 
-    void deposit(Account account, double amount, Principal principal);    
-    void withdraw(Account account, double amount, Principal principal);
+    void deposit(CurrentAccount account, double amount, Principal principal);    
+    void withdraw(CurrentAccount account, double amount, Principal principal);
 }
