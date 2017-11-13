@@ -56,6 +56,27 @@ public class UserTest {
 		classUnderTest.openSavingsAccount();
 		assertTrue(classUnderTest.savingsAccount instanceof SavingsAccount);
 	}
+	
+	@Test //test 
+	public void testTransferToSavings() {
+		int result = 50;
+		classUnderTest.openSavingsAccount();
+		classUnderTest.openCurrentAccount();
+		classUnderTest.currentAccount.deposit(150);
+		classUnderTest.transferToSaving(100);
+		assertEquals(result, classUnderTest.currentAccount.getBalance());
+	}
+	
+	
+	@Test
+	public void testTransferToCurrent() {
+		int result = 50;
+		classUnderTest.openSavingsAccount();
+		classUnderTest.openCurrentAccount();
+		classUnderTest.savingsAccount.deposit(150);
+		classUnderTest.transferToCurrent(100);
+		assertEquals(result, classUnderTest.savingsAccount.getBalance());
+	}
 
 }
 
