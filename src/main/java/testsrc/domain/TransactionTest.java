@@ -28,5 +28,4 @@ class TransactionTest {
 		assertEquals(result, classUnderTest.getAmount());
 	}
 	
-//Acomment
 }

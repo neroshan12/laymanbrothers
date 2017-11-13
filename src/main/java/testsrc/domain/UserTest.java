@@ -44,6 +44,18 @@ public class UserTest {
 		String result = "gijoe";
 		assertEquals(result, classUnderTest.getUsername());
 	}
+	
+	@Test
+	public void testOpenCurrentAccount() {
+		classUnderTest.openCurrentAccount();
+		assertTrue(classUnderTest.currentAccount instanceof CurrentAccount);
+	}
+	
+	@Test
+	public void testOpenSavingsAccount() {
+		classUnderTest.openSavingsAccount();
+		assertTrue(classUnderTest.savingsAccount instanceof SavingsAccount);
+	}
 
 }
 

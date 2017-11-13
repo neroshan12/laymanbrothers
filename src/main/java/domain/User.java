@@ -1,67 +1,52 @@
 package domain;
-	
-	
-	
-	public class User {
-	
-	
+
+import javax.persistence.Entity;
+
+@Entity
+public class User {
 	private String firstName;
-	
-	
 	private String lastName;
-	
-	
 	private String email;
-	
-	
 	private String username;
+	CurrentAccount currentAccount;
+	SavingsAccount savingsAccount;
 	
-	
-	public User( String firstName, String lastName, String email, String username) {
-	
+	public User(String firstName, String lastName, String email, String username) {
 		this.firstName = firstName;
-		
 		this.lastName = lastName;
-		
 		this.email = email;
-		
 		this.username = username;
-		
-	}
-	
-	public User() {
-		
 	}
 	
 	public String getFirstName() {
-	
 		return firstName;
-	
 	}
 	
 	
 	
 	public String getLastName() {
-	
 		return lastName;
-	
 	}
 	
 	
 	
 	public String getEmail() {
-	
 		return email;
-	
 	}
 	
 	
 	
 	public String getUsername() {
-	
 		return username;
-	
 	}
+	
+	public void openCurrentAccount() {
+		currentAccount = new CurrentAccount(0);
+    }
+	
+	public void openSavingsAccount() {
+		savingsAccount = new SavingsAccount(0, null);
+    }
 
 }
 
