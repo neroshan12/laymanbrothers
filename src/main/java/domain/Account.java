@@ -14,13 +14,14 @@ public class Account {
 	private long id;
 	private String name;
 	private int balance;
-	
-	public Account(String name, int balance) {
+	private Transaction[] transactions;
+
+	public Account(String name, int balance, Transaction[] transactions) {
 		super();
 		this.name = name;
 		this.balance = balance;
+		this.transactions = transactions;
 	}
-	
 
 	public long getId() {
 		return id;
@@ -42,6 +43,10 @@ public class Account {
 		this.balance = balance;
 	}
 	
+	public Transaction[] getTransactions() {
+		return transactions;
+	}
+	
 	public void deposit(int amount) {
 		balance += amount;
 	}
@@ -49,6 +54,5 @@ public class Account {
 	public void withdraw(int amount) {
 		balance -= amount;
 	}
-	
 	
 }
