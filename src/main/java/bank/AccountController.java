@@ -16,7 +16,6 @@ import domain.Account;
 @Controller
 public class AccountController {
 	
-	
 	Account accountWill = new Account("Will", 0);
 	Account accountJoe = new Account("Joe", 10);
 	Account accountKeith = new Account("Keith", 20);
