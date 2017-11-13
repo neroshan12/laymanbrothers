@@ -19,16 +19,22 @@ import domain.User;
 public class UserController {
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@GetMapping(value = "/newUser")
 	public String userForm(Model model) {
 		model.addAttribute("user", new User(null, null, null, null));
 =======
+=======
+>>>>>>> 032e21d62fcb0b227b655435572a182fbab001e3
 	ArrayList<User> someList = new ArrayList<User>();
 //	User user = new User("Will", "Cabangon", "will@will.com", "will_will");
 	
 	@RequestMapping(value = "/newUser")
 	public String userForm() {
+<<<<<<< HEAD
 >>>>>>> Add sign up functionality
+=======
+>>>>>>> 032e21d62fcb0b227b655435572a182fbab001e3
 		return "newUser";
 	}
 	
