@@ -31,7 +31,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/user")
 	public String user(Model model) {
-	model.addAttribute("user", bank.users.get(0));
+	model.addAttribute("user", bank.getUsers());
 		return "user";
 	}
 }
