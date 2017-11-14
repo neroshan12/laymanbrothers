@@ -16,6 +16,9 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.username = username;
+		this.currentAccount = new CurrentAccount(0);
+		this.savingsAccount = new SavingsAccount(0);
+
 	}
 	public User() {}
 	

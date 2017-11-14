@@ -16,8 +16,8 @@ import java.util.List;
          users.add(user);
      }
      
- 	public String getUsers() {
- 		return users.get(0).getFirstName();
+ 	public User getUsers() {
+ 		return users.get(0);
  	}
  	
  }

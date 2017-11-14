@@ -10,8 +10,8 @@
      <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
     <h4 class='statement'>Your Current Account balance is</h4>
     
-     <p th:text="${user.getBalance()}">
-
+     <p th:text="${user.currentAccount.getBalance()}">
+ 
     </p>
      
     <a th:href="@{/withdraw}">Withdraw</a>
