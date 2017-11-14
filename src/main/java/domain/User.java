@@ -2,6 +2,7 @@ package domain;
 
 import javax.persistence.Entity;
 
+
 @Entity
 public class User {
 	private String firstName;
@@ -70,6 +71,11 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	
+	public CurrentAccount getCurrentAccount()
+	{
+		return this.currentAccount;
 	}
 }
 
