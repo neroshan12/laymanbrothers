@@ -3,14 +3,17 @@
 <head>
     <title>Account Balance page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
 </head>
 <body>
-    <h1 class='heading'>Welcome to Laymans Brothers</h1>
+    <center>
+    <h1 texclass='heading'>Welcome to Layman Brothers</h1>
       <p>Do you want to open a new account? </p>
       <form method="get" action="/newUser">
       <input type="submit" value="Sign Up"/>
       </form>
       <p>Already an account holder?</p>
       <button id="login">Login</button>
+     </center>
 </body>
 </html>
