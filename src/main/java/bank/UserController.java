@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import domain.Bank;
 import domain.User;
 
 @Controller
 public class UserController {
 
 	ArrayList<User> someList = new ArrayList<User>();
+	Bank bank = new Bank();
 	
 	@RequestMapping(value = "/newUser")
 	public String userForm() {
@@ -27,12 +29,13 @@ public class UserController {
 	@RequestMapping(value = "/newUser", method = RequestMethod.POST)
     public String newUserSubmit(@ModelAttribute("user") User user, Model model) {
 		someList.add(user);
+		bank.addUser(user);
         return "redirect:/user";
     }
 	
 	@RequestMapping(value = "/user")
 	public String user(Model model) {
-	model.addAttribute("user", someList.get(0));
+	model.addAttribute("user", bank.getUsers());
 		return "user";
 	}
 }
