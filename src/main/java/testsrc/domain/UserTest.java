@@ -72,8 +72,6 @@ public class UserTest {
 	@Test
 	public void testTransferToCurrent() {
 		int result = 50;
-		classUnderTest.openSavingsAccount();
-		classUnderTest.openCurrentAccount();
 		classUnderTest.savingsAccount.deposit(150);
 		classUnderTest.transferToCurrent(100);
 		assertEquals(result, classUnderTest.savingsAccount.getBalance());
