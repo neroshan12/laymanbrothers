@@ -23,6 +23,10 @@ import java.util.List;
      public List<User> getAllUsers() {
   		return users;
   	}
+     
+    public String getUsers() {
+    		return users.get(0).getFirstName();
+    }
   	
   	public User findById(int id)
   	{

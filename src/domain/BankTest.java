@@ -22,10 +22,10 @@
      }
  	
     @Test
-    public void getUsers() {
+    public void testGetAllUsers() {
          User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
          classUnderTest.addUser(nero);
-         assertEquals("Nero", classUnderTest.getUsers().getFirstName());
+         assertEquals("Nero", classUnderTest.getUsers());
      }
  
  }
