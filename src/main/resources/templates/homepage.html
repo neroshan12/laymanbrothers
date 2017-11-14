@@ -3,14 +3,20 @@
 <head>
     <title>Account Balance page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+    <link href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
 </head>
 <body>
-    <h1 class='heading'>Welcome to Laymans Brothers</h1>
-      <p>Do you want to open a new account? </p>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <center> 
+      <h1>Welcome to Layman Brothers</h1>
+      <h2>Do you want to open a new account? </h2>
       <form method="get" action="/newUser">
       <input type="submit" value="Sign Up"/>
       </form>
-      <p>Already an account holder?</p>
+      <h2>Already an account holder?</h2>
       <button id="login">Login</button>
+     </center>
 </body>
 </html>
