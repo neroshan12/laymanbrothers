@@ -16,6 +16,10 @@ import java.util.List;
          users.add(user);
      }
      
+     public User getFirstUser() {
+    	 	return users.get(0);
+     }
+     
      public List<User> getAllUsers() {
   		return users;
   	}
