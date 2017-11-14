@@ -4,33 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class SavingsAccount {
 	
+	public static final double DAILY_INTEREST = 1.005;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String name;
 	double balance;
-	private Transaction[] transactions;
+	public List<Transaction> transactions;
 
-	public SavingsAccount(double balance, Transaction[] transactions) {
-		super();
+
+	public SavingsAccount(double balance) {
 		this.balance = balance;
-		this.transactions = transactions;
+		this.transactions = new ArrayList<Transaction>();
 	}
 
 	public long getId() {
 		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public double getBalance() {
@@ -39,10 +34,6 @@ public class SavingsAccount {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
-	}
-	
-	public Transaction[] getTransactions() {
-		return transactions;
 	}
 	
 	public void deposit(double amount) {
@@ -54,7 +45,7 @@ public class SavingsAccount {
 	}
 	
 	public void addInterest() {
-		balance *= 1.005;		
+		balance *= DAILY_INTEREST;		
 	}
 }
 
