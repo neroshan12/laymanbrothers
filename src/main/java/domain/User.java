@@ -47,13 +47,13 @@ public class User {
     }
 	
 	public void transferToSaving(int amount) {
-		currentAccount.balance -= amount;
-		savingsAccount.balance += amount;
+		this.currentAccount.balance -= amount;
+		this.savingsAccount.balance += amount;
 	}
 	
 	public void transferToCurrent(int amount) {
-		savingsAccount.balance -= amount;
-		currentAccount.balance += amount;
+		this.savingsAccount.balance -= amount;
+		this.currentAccount.balance += amount;
 	}
 
 	public void setFirstName(String firstName) {

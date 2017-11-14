@@ -25,7 +25,7 @@
     public void getUsers() {
          User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
          classUnderTest.addUser(nero);
-         assertEquals("Nero", classUnderTest.getUsers());
+         assertEquals("Nero", classUnderTest.getUsers().getFirstName());
      }
  
  }
