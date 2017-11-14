@@ -8,8 +8,8 @@ public class User {
 	private String lastName;
 	private String email;
 	private String username;
-	CurrentAccount currentAccount;
-	SavingsAccount savingsAccount;
+	public CurrentAccount currentAccount;
+	public SavingsAccount savingsAccount;
 	
 	public User(String firstName, String lastName, String email, String username) {
 		this.firstName = firstName;
@@ -40,7 +40,7 @@ public class User {
     }
 	
 	public void openSavingsAccount() {
-		savingsAccount = new SavingsAccount(0, null);
+		savingsAccount = new SavingsAccount(0);
     }
 	
 	public void transferToSaving(int amount) {

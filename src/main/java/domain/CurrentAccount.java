@@ -10,6 +10,8 @@ import java.util.ArrayList;
 @Entity
 public class CurrentAccount {
 	
+	public static final double DAILY_INTEREST = 1.002;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -42,7 +44,7 @@ public class CurrentAccount {
 	}
 	
 	public void addInterest() {
-		balance *= 1.002;		
+		balance *= DAILY_INTEREST;		
 	}
 	
 }

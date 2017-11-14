@@ -12,7 +12,7 @@ public class SavingsAccountTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		classUnderTest = new SavingsAccount(0, null);
+		classUnderTest = new SavingsAccount(0);
 	}
 	
 	@Test
