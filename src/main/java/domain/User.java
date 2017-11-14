@@ -17,10 +17,8 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.username = username;
-		this.currentAccount = new CurrentAccount(0);
-		this.savingsAccount = new SavingsAccount(0);
-
 	}
+	
 	public User() {}
 	
 	public String getFirstName() {
@@ -40,19 +38,19 @@ public class User {
 	}
 	
 	public void openCurrentAccount() {
-		currentAccount = new CurrentAccount(0);
+		currentAccount = new CurrentAccount(0.00);
     }
 	
 	public void openSavingsAccount() {
-		savingsAccount = new SavingsAccount(0);
+		savingsAccount = new SavingsAccount(0.00);
     }
 	
-	public void transferToSaving(int amount) {
+	public void transferToSaving(double amount) {
 		this.currentAccount.balance -= amount;
 		this.savingsAccount.balance += amount;
 	}
 	
-	public void transferToCurrent(int amount) {
+	public void transferToCurrent(double amount) {
 		this.savingsAccount.balance -= amount;
 		this.currentAccount.balance += amount;
 	}

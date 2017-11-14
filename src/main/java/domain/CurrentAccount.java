@@ -47,11 +47,9 @@ public class CurrentAccount {
 		balance *= DAILY_INTEREST;		
 	}
 	
-	public void transfer(double transferAmount, CurrentAccount otherAccount)
-	{
+	public void transfer(double transferAmount, CurrentAccount otherAccount) {
 		this.withdraw(transferAmount);
 		otherAccount.deposit(transferAmount);
-			
 	}
 	
 }
