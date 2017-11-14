@@ -7,6 +7,12 @@
 <body>
 	<h1> Your Accounts</h1>
 	
-	<h3>Current Account</h3>
+	<a th:href="@{/balance}"><h3>Current Account</h3></a>
+	<p th:text="${user.currentAccount.getBalance()}"></p>
 	
-	<h3>Savings Account</h3>
+	<a th:href="@{/balance}"><h3>Savings Account</h3></a>
+	<p th:text="${user.savingsAccount.getBalance()}"></p>
+	
+	</body>
+	
+</html>

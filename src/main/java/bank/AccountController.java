@@ -34,6 +34,12 @@ public class AccountController {
 		return "balance";
 	}
 	
+	@RequestMapping(value = "/accounts")
+	public String accounts(Model model) {
+		model.addAttribute("user", accountWill);
+		return "accounts";
+	}
+	
 	@RequestMapping(value = "/deposit")
 	public String deposits(Model model) {
 		model.addAttribute("user", accountWill);
