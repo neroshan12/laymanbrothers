@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Accounts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1> Your Accounts</h1>
+	
+	<a th:href="@{/balance}"><h3>Current Account</h3></a>
+	<p th:text="${user.currentAccount.getBalance()}"></p>
+	
+	<a th:href="@{/balance}"><h3>Savings Account</h3></a>
+	<p th:text="${user.savingsAccount.getBalance()}"></p>
+	
+	</body>
+	
+</html>
