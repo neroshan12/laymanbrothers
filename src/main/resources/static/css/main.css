@@ -2,10 +2,10 @@ h1{
 	color:#ffffff;
 }
 
-h2{
+h2.whitestyle{
 	color:#ffffff;
 }
 
-body{
-	background-color: #21B3DE
+h2.blackstyle{
+	color:#000000
 }

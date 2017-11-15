@@ -189,6 +189,16 @@ hr.small {
   margin-bottom: 30px;
 }
 
+/* Font */
+
+h2.whitestyle{
+	color:#ffffff;
+}
+
+h2.blackstyle{
+	color:#000000
+}
+
 
 /* Callout */
 
