@@ -1,7 +1,10 @@
 package bank.services;
 
+import java.security.Principal;
+
 import bank.domain.CurrentAccount;
 import bank.domain.SavingsAccount;
+import bank.domain.User;
 
 public interface AccountService {
 	
@@ -9,4 +12,5 @@ public interface AccountService {
 	
 	SavingsAccount createSavingsAccount();
 	
+	void deposit(int amount, User user);
 }
