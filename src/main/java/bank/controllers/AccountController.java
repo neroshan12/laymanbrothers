@@ -71,9 +71,9 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "/withdraw", method = RequestMethod.POST)
-	public String withdraw(@ModelAttribute("withdraw") int amount) {
+	public String withdrawPost(@ModelAttribute("amount") int amount) {
 		User user = userService.findById(1);
-		user.currentAccount.withdraw(amount);
+		accountService.withdraw(amount, user);
 		return "redirect:/balance";
 	}
 	

@@ -46,21 +46,12 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
-	
-	public void openCurrentAccount() {
-		currentAccount = new CurrentAccount(0);
-    }
-	
-	public void openSavingsAccount() {
-		savingsAccount = new SavingsAccount(0);
-    }
-	
+
 	public void transferToSaving(double amount) {
 		if ((currentAccount.getBalance() - amount) > currentAccount.getOverdraft()) {
 			currentAccount.balance -= amount;
 			savingsAccount.balance += amount;
 		}
-
 	}
 
 	public void transferToCurrent(double amount) {

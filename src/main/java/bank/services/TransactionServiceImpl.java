@@ -24,7 +24,6 @@ public class TransactionServiceImpl implements TransactionService {
 		List<Transaction> transactions = new ArrayList<>();
 		transactionRepository.findAll().forEach(transactions::add);
 		return transactions;
-		
 	}
 
 	@Override
@@ -43,9 +42,6 @@ public class TransactionServiceImpl implements TransactionService {
 		transactionRepository.save(transaction);
 		return transaction;
 	}
-	
-
-	
-	}
+}
 
 
