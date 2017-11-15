@@ -1,22 +1,256 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Account Balance page</title>
+    <title>Layman Brothers</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
-    <link href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
 </head>
 <body>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <center> 
-      <h1>Welcome to Layman Brothers</h1>
-      <h2>Do you want to open a new account? </h2>
-      <form method="get" action="/newUser">
-      <input type="submit" value="Sign Up"/>
-      </form>
-      <h2>Already an account holder?</h2>
-      <button id="login">Login</button>
-     </center>
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="stylishportfolio/js/stylish-portfolio.js"></script>
+
+      <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#top">Layman Brothers</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#top">Home</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#services">Services</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+    <!--      <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a> -->
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="top">
+      <div class="text-vertical-center">
+        <h1 class="blackstyle">LAYMAN BROTHERS</h1>
+        <h3 class="blackstyle">Too Big to Fail</h3>
+        <br></br>
+        <center>
+          <h5 class="whitestyle">Do you want to open a new account? </h5>
+          <form method="get" action="/newUser">
+          <input type="submit" value="Sign Up"/>
+          </form>
+          <h5 class="whitestyle">Already an account holder?</h5>
+          <button id="login">Login</button>
+         </center>
+         <br></br>
+        <a href="#services" class="btn btn-dark btn-lg js-scroll-trigger">Meet The Team</a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container text-center">
+        <h2 class="blackstyle">Let our patented Java Online Banking System (JOBS) allow you to rest easy knowing your assets are secure!</h2>
+        <p class="lead">(Disclaimer: Please don't send sensitive information with this application)</p>
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-12 mx-auto">
+            <h2 class="whitestyle">The Team</h2>
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Etienne</strong>
+                  </h4>
+                  <p>The Frontman</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Will</strong>
+                  </h4>
+                  <p>Mr. Persistence</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Nero</strong>
+                  </h4>
+                  <p>The Sri-Lankan Stallion</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Joe</strong>
+                  </h4>
+                  <p>Mr. Java</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Marcus</strong>
+                  </h4>
+                  <p>The Secret Weapon</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+                <div class="col-md-2 col-sm-2">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                  </span>
+                  <h4>
+                    <img src="images/LogoBlue.png" alt="logo" height="50" width="50"></img>
+                    <br></br>
+                    <strong>Keith</strong>
+                  </h4>
+                  <p>The Human Encyclopedia</p>
+                  <a href="#" class="btn btn-light">View</a>
+                </div>
+              </div>
+            </div>
+            <!-- /.row (nested) -->
+            </hr>
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+      <div class="text-vertical-center">
+        <h1 class="bluestyle">£150 when you sign up!</h1>
+      </div>
+    </aside>
+
+    <section class="about">
+      <div class="container text-center">
+        <h2 class="blackstyle">Find us below!</h2>
+        <p class="lead"></p>
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+      <small>
+        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+      </small>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto text-center">
+            <h4>
+              <strong>Layman Brothers</strong>
+            </h4>
+            <p>Makers Academy
+              <br></br>50 Commercial St,
+              <br></br> London, E1 6LT</p>
+            <ul class="list-unstyled">
+
+              <li>
+                <i class="fa fa-envelope-o fa-fw"></i>
+                <a href="mailto:laymanbrothersbank@gmail.com">laymanbrothersbank@gmail.com</a>
+              </li>
+            </ul>
+            <br></br>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook fa-fw fa-3x"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter fa-fw fa-3x"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-dribbble fa-fw fa-3x"></i>
+                </a>
+              </li>
+            </ul>
+            <hr class="small">
+            <p class="text-muted">Copyright &copy; Layman Brothers 2017</p>
+            </hr>
+          </div>
+        </div>
+      </div>
+      <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
+        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
+      </a>
+    </footer>
+
+
+
+
 </body>
 </html>

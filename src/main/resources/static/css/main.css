@@ -2,10 +2,26 @@ h1{
 	color:#ffffff;
 }
 
-h2{
+h1.bluestyle{
+	color:#3378B6;
+}
+
+h1.blackstyle{
+	color:#000000
+}
+
+h2.whitestyle{
 	color:#ffffff;
 }
 
-body{
-	background-color: #21B3DE
+h2.blackstyle{
+	color:#000000
+}
+
+h3.blackstyle{
+	color:#000000
+}
+
+h5.whitestyle{
+	color:#ffffff
 }
