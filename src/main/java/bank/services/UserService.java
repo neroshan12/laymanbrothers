@@ -10,9 +10,10 @@ public interface UserService {
 	
 	User findByEmail(String email);
 	
+	User findById(int id);
+	
 	User findByUsername(String username);
 	
 	User saveOrUpdate(User user);
 	
-	void delete(Long id);
 }

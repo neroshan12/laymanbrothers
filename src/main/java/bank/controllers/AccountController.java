@@ -2,6 +2,7 @@ package bank.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,25 +12,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import bank.domain.CurrentAccount;
 import bank.domain.Transaction;
 import bank.domain.User;
+import bank.services.UserService;
 import bank.domain.Bank;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @Controller
 public class AccountController {
-		
-	User accountWill = new User("Will", "Cabangon", "will@will.com", "will_will");
-			
-//	CurrentAccount accountWill = new CurrentAccount(0);
-//	CurrentAccount accountJoe = new CurrentAccount(0);
-//	CurrentAccount accountKeith = new CurrentAccount(0);
-//	CurrentAccount accountMarcus = new CurrentAccount(0);
-//	CurrentAccount accountEtienne = new CurrentAccount(0);
-//	CurrentAccount accountNero = new CurrentAccount(0);
+	
+private UserService userService;
+	
+	@Autowired
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 
 	@RequestMapping(value = "/balance")
 	public String users(Model model) {
-//		accountWill.openCurrentAccount();
 		model.addAttribute("user", accountWill);
 		return "balance";
 	}

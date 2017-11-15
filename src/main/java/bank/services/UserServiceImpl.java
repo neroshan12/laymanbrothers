@@ -36,16 +36,15 @@ public class UserServiceImpl implements UserService {
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+    
+    @Override
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
 
     @Override
     public User saveOrUpdate(User user) {
         userRepository.save(user);
         return user;
-    }
-
-    @Override
-    public void delete(Long id) {
-        userRepository.delete(id);
-
     }
 }

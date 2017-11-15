@@ -1,7 +1,0 @@
-domain/DateProvider.class
-domain/Transaction.class
-bank/AccountController.class
-domain/User.class
-domain/AccountRepository.class
-bank/Application.class
-domain/TransactionTest.class
