@@ -1,16 +1,34 @@
-package domain;
+package bank.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "bankuser")
 public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "userId", nullable = false, updatable = false)
+	private Long id;
 	private String firstName;
 	private String lastName;
+	@Column(name = "email", nullable = false, unique = true)
 	private String email;
+	@Column(name = "username", nullable = false, unique = true)
 	private String username;
-	public CurrentAccount currentAccount;
-	public SavingsAccount savingsAccount;
+	
+	@OneToOne
+	private CurrentAccount currentAccount;
+	
+	@OneToOne
+	private SavingsAccount savingsAccount;
 	
 	public User(String firstName, String lastName, String email, String username) {
 		this.firstName = firstName;

@@ -1,4 +1,4 @@
-package bank;
+package bank.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
