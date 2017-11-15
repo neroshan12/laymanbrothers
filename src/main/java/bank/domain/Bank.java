@@ -17,17 +17,6 @@ import java.util.List;
          users.add(user);
      }
      
-     public User getFirstUser() {
-    	 	return users.get(0);
-     }
-     
-     public List<User> getAllUsers() {
-  		return users;
-  	}
-     
-    public User getUsers() {
-    		return users.get(0);
-    }
   	
   	public User findById(int id)
   	{
@@ -46,36 +35,23 @@ import java.util.List;
  		return null;
  	}
   	
-  	public void transfer(double amount, String fromUserName,String fromAccount,String toUserName,String toAccount)
-  	{
+  	public void transfer(double amount, String fromUserName,String fromAccount,String toUserName,String toAccount) {
   	  User fromUser = this.findByName(fromUserName);
   	  User toUser = this.findByName(toUserName);
-  	  if(fromAccount == "current account")
-  	  {
+  	  if (fromAccount == "current account") {
   	    CurrentAccount senderAccount = fromUser.getCurrentAccount();
-  	    if(toAccount == "current account")
-    	  	{
-  	    	senderAccount.transferToCurrent(amount, toUser.getCurrentAccount());
-    	  	}
-    	  	else
-    	  	{
-    	  		senderAccount.transferToSavings(amount, toUser.getSavingsAccount());
-    	  	}
-  	  }
-  	  else
-  	  {
-  	    SavingsAccount senderAccount = fromUser.getSavingsAccount();
-  	    if(toAccount == "current account")
-    	  	{
+  	    if(toAccount == "current account") {
   	    		senderAccount.transferToCurrent(amount, toUser.getCurrentAccount());
-    	  	}
-    	  	else
-    	  	{
+  	    } else {
     	  		senderAccount.transferToSavings(amount, toUser.getSavingsAccount());
     	  	}
-  	  
+  	  	} else {
+  	  		SavingsAccount senderAccount = fromUser.getSavingsAccount();
+  	    if (toAccount == "current account") {
+  	    		senderAccount.transferToCurrent(amount, toUser.getCurrentAccount());
+    	  	} else {
+    	  		senderAccount.transferToSavings(amount, toUser.getSavingsAccount());
+    	  	}
   	  }
-  	  
-
   	}
  }
