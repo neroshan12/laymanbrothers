@@ -24,7 +24,6 @@ public class UserController {
 	public String userForm() {
 		return "newUser";
 	}
-
 	
 	@RequestMapping(value = "/newUser", method = RequestMethod.POST)
     public String newUserSubmit(User user) {
@@ -34,7 +33,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/user")
 	public String helloUser(Model model) {
-		model.addAttribute("user", userService.findByUsername("dick"));
+		model.addAttribute("user", userService.findById(1));
 		return "user";
 	}
 	
