@@ -1,5 +1,6 @@
 package bank.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,22 +25,11 @@ public class User {
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	public CurrentAccount currentAccount;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	public SavingsAccount savingsAccount;
-	
-	public User(String firstName, String lastName, String email, String username) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.username = username;
-		this.currentAccount = new CurrentAccount(0);
-		this.savingsAccount = new SavingsAccount(0);
-
-	}
-	public User() {}
 	
 	public String getFirstName() {
 		return firstName;
@@ -56,14 +46,6 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
-	
-	public void openCurrentAccount() {
-		currentAccount = new CurrentAccount(0);
-    }
-	
-	public void openSavingsAccount() {
-		savingsAccount = new SavingsAccount(0);
-    }
 	
 	public void transferToSaving(int amount) {
 		this.currentAccount.balance -= amount;
@@ -93,13 +75,20 @@ public class User {
 	
 	public CurrentAccount getCurrentAccount()
 	{
-		return this.currentAccount;
+		return currentAccount;
 	}
 	
 	public SavingsAccount getSavingsAccount()
 	{
-		return this.savingsAccount;
+		return savingsAccount;
 	}
+	public void setCurrentAccount(CurrentAccount currentAccount) {
+		this.currentAccount = currentAccount;
+	}
+	public void setSavingsAccount(SavingsAccount savingsAccount) {
+		this.savingsAccount = savingsAccount;
+	}
+	
 }
 
 
