@@ -1,5 +1,6 @@
 package domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -96,17 +97,36 @@ public class UserTest {
 		int result = 50;
 		classUnderTest.openSavingsAccount();
 		classUnderTest.openCurrentAccount();
-		classUnderTest.currentAccount.deposit(150);
-		classUnderTest.transferToSaving(100);
+		classUnderTest.currentAccount.deposit(150.00);
+		classUnderTest.transferToSaving(100.00);
 		assertEquals(result, classUnderTest.currentAccount.getBalance());
 	}
 	
+	@Test //test 
+	public void testFailTransferToSavings() {
+		int result = 10;
+		classUnderTest.openSavingsAccount();
+		classUnderTest.openCurrentAccount();
+		classUnderTest.currentAccount.deposit(10.00);
+		classUnderTest.transferToSaving(130.00);
+		assertEquals(result, classUnderTest.currentAccount.getBalance());
+	}
 	
 	@Test
 	public void testTransferToCurrent() {
 		int result = 50;
 		classUnderTest.savingsAccount.deposit(150);
 		classUnderTest.transferToCurrent(100);
+		assertEquals(result, classUnderTest.savingsAccount.getBalance());
+	}
+	
+	@Test //test 
+	public void testFailTransferToCurrent() {
+		int result = 10;
+		classUnderTest.openSavingsAccount();
+		classUnderTest.openCurrentAccount();
+		classUnderTest.savingsAccount.deposit(10.00);
+		classUnderTest.transferToCurrent(100.00);
 		assertEquals(result, classUnderTest.savingsAccount.getBalance());
 	}
 

@@ -17,6 +17,7 @@ import java.util.List;
 public class SavingsAccount {
 	
 	public static final double DAILY_INTEREST = 1.005;
+	public static final double OVERDRAFT = 0.00;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -61,6 +62,10 @@ public class SavingsAccount {
 
 	public void addInterest() {
 		balance *= DAILY_INTEREST;		
+	}
+
+	public double getOverdraft() {
+		return OVERDRAFT;
 	}
 }
 
