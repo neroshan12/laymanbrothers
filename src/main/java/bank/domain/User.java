@@ -25,10 +25,10 @@ public class User {
 	private String username;
 	
 	@OneToOne
-	private CurrentAccount currentAccount;
+	public CurrentAccount currentAccount;
 	
 	@OneToOne
-	private SavingsAccount savingsAccount;
+	public SavingsAccount savingsAccount;
 	
 	public User(String firstName, String lastName, String email, String username) {
 		this.firstName = firstName;

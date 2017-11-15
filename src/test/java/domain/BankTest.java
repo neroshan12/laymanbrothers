@@ -6,6 +6,9 @@
  
  import org.junit.Before;
  import org.junit.Test;
+
+import bank.domain.Bank;
+import bank.domain.User;
  
  public class BankTest {
  	

@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import bank.domain.SavingsAccount;
+
 public class SavingsAccountTest {
 	
 	private SavingsAccount classUnderTest;
