@@ -24,8 +24,8 @@ import java.util.List;
   		return users;
   	}
      
-    public String getUsers() {
-    		return users.get(0).getFirstName();
+    public User getUsers() {
+    		return users.get(0);
     }
   	
   	public User findById(int id)
