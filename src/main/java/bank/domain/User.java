@@ -64,14 +64,19 @@ public class User {
 		savingsAccount = new SavingsAccount(0);
     }
 	
-	public void transferToSaving(int amount) {
-		this.currentAccount.balance -= amount;
-		this.savingsAccount.balance += amount;
+	public void transferToSaving(double amount) {
+		if ((currentAccount.getBalance() - amount) > currentAccount.getOverdraft()) {
+			currentAccount.balance -= amount;
+			savingsAccount.balance += amount;
+		}
 	}
-	
-	public void transferToCurrent(int amount) {
-		this.savingsAccount.balance -= amount;
-		this.currentAccount.balance += amount;
+
+
+	public void transferToCurrent(double amount) {
+		if ((savingsAccount.getBalance() - amount) > savingsAccount.getOverdraft()) {
+			savingsAccount.balance -= amount;
+			currentAccount.balance += amount;
+		} 
 	}
 
 	public void setFirstName(String firstName) {
