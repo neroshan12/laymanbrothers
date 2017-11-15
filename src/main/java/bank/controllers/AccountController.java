@@ -2,6 +2,9 @@ package bank.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -23,6 +26,9 @@ public class AccountController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private AccountService accountService;
 
 	@RequestMapping(value = "/balance")
 	public String users(Model model) {
@@ -51,9 +57,9 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value = "/deposit", method = RequestMethod.POST)
-	public String deposit(@ModelAttribute("amount") int amount) {
+	public String depositPost(@ModelAttribute("amount") int amount) {
 		User user = userService.findById(1);
-		user.currentAccount.deposit(amount);
+		accountService.deposit(amount, user);
 		return "redirect:/balance";
 	}
 	

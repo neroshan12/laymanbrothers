@@ -1,10 +1,14 @@
 package bank.services;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import bank.domain.CurrentAccount;
 import bank.domain.SavingsAccount;
+import bank.domain.Transaction;
+import bank.domain.User;
 import bank.repositories.CurrentAccountRepository;
 import bank.repositories.SavingsAccountRepository;
 
@@ -17,6 +21,11 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private CurrentAccountRepository currentAccountRepository;
 	
+	@Autowired
+    private UserService userService;
+	
+	@Autowired
+    private TransactionService transactionService;
 	
 	 public SavingsAccount createSavingsAccount() {
 	     	SavingsAccount savingsAccount = new SavingsAccount(100);
@@ -34,5 +43,17 @@ public class AccountServiceImpl implements AccountService {
 
 	        return currentAccountRepository.findById(currentAccount.getId());
 	    }
+	 
+	  public void deposit(int amount, User user) {
+//	        User user = userService.findByUsername(principal.getName());
+	        
+	        CurrentAccount currentAccount = user.getCurrentAccount();
+	        currentAccount.deposit(amount);
+	        currentAccountRepository.save(currentAccount);
+	        
+	        Transaction transaction = new Transaction(amount);
+	        transactionService.saveOrUpdate(transaction);
+	            
+	  }
 	 
 }
