@@ -2,6 +2,7 @@ package bank.domain;
  
 import java.util.ArrayList;
 import java.util.List;
+
  
  
  public class Bank {
@@ -37,7 +38,6 @@ import java.util.List;
  	{
  		for(int i=0; i < users.size(); i++)
  		{
- 			System.out.println(users.get(i).getUsername());
  			if(users.get(i).getUsername() == username)
  			{
  				return users.get(i);
@@ -46,15 +46,36 @@ import java.util.List;
  		return null;
  	}
   	
-  	public void transfer(double amount, String fromUserName,String toUserName)
+  	public void transfer(double amount, String fromUserName,String fromAccount,String toUserName,String toAccount)
   	{
-  	  System.out.println(this.findByName(fromUserName));
   	  User fromUser = this.findByName(fromUserName);
   	  User toUser = this.findByName(toUserName);
-  	  System.out.println(toUser.currentAccount.getBalance());
-  	  System.out.println(fromUser.currentAccount.getBalance());
-  	  fromUser.getCurrentAccount().transfer(amount, toUser.currentAccount);
-  	  System.out.println(toUser.currentAccount.getBalance());
-  	  System.out.println(fromUser.currentAccount.getBalance());
+  	  if(fromAccount == "current account")
+  	  {
+  	    CurrentAccount senderAccount = fromUser.getCurrentAccount();
+  	    if(toAccount == "current account")
+    	  	{
+  	    	senderAccount.transferToCurrent(amount, toUser.getCurrentAccount());
+    	  	}
+    	  	else
+    	  	{
+    	  		senderAccount.transferToSavings(amount, toUser.getSavingsAccount());
+    	  	}
+  	  }
+  	  else
+  	  {
+  	    SavingsAccount senderAccount = fromUser.getSavingsAccount();
+  	    if(toAccount == "current account")
+    	  	{
+  	    		senderAccount.transferToCurrent(amount, toUser.getCurrentAccount());
+    	  	}
+    	  	else
+    	  	{
+    	  		senderAccount.transferToSavings(amount, toUser.getSavingsAccount());
+    	  	}
+  	  
+  	  }
+  	  
+
   	}
  }

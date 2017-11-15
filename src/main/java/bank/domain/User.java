@@ -95,6 +95,11 @@ public class User {
 	{
 		return this.currentAccount;
 	}
+	
+	public SavingsAccount getSavingsAccount()
+	{
+		return this.savingsAccount;
+	}
 }
 
 
