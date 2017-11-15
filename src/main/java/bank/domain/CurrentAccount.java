@@ -1,9 +1,15 @@
-package domain;
+package bank.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -16,6 +22,9 @@ public class CurrentAccount {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	double balance;
+	
+    @OneToMany(mappedBy = "currentAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
 	public List<Transaction> transactions;
 
 	public CurrentAccount(double balance) {

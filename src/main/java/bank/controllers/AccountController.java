@@ -1,4 +1,4 @@
-package bank;
+package bank.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import domain.CurrentAccount;
-import domain.Transaction;
-import domain.User;
-import domain.Bank;
+import bank.domain.CurrentAccount;
+import bank.domain.Transaction;
+import bank.domain.User;
+import bank.domain.Bank;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 

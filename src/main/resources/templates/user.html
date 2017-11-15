@@ -4,12 +4,13 @@
     <title>User details</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
 	<h1>Your Details:</h1>
-    <p th:text="'First Name: ' + ${user.getFirstName()}" /> 
-    <p th:text="'Last Name: ' + ${user.getLastName()}" />
-    <p th:text="'Email: ' + ${user.getEmail()}" />
-    <p th:text="'User name: ' + ${user.getUsername()}" /> 
-    <a href="/accounts">View your accounts</a>  
+   	<p th:text="${user.getFirstName()}"> </p> 
+    <p th:text="${user.getLastName()}"> </p> 
+    <p th:text="${user.getEmail()}"> </p> 
+    <p th:text="${user.getUsername()}">  </p>
+    <a href="/balance">View your accounts</a> 
 </body>
 </html>

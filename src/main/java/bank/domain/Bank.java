@@ -1,4 +1,4 @@
-package domain;
+package bank.domain;
  
 import java.util.ArrayList;
 import java.util.List;

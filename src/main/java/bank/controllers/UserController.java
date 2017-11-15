@@ -1,37 +1,41 @@
-package bank;
+package bank.controllers;
 
-import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import domain.Bank;
-import domain.User;
+import bank.domain.User;
+import bank.services.UserService;
 
 @Controller
 public class UserController {
 
-//	ArrayList<User> someList = new ArrayList<User>();
+	private UserService userService;
 	
-	Bank bank = new Bank();
+	@Autowired
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 	
 	@RequestMapping(value = "/newUser")
 	public String userForm() {
 		return "newUser";
 	}
+
 	
 	@RequestMapping(value = "/newUser", method = RequestMethod.POST)
-    public String newUserSubmit(@ModelAttribute("user") User user, Model model) {
-		bank.addUser(user);
+    public String newUserSubmit(User user) {
+		userService.saveOrUpdate(user);
         return "redirect:/user";
     }
 	
 	@RequestMapping(value = "/user")
-	public String user(Model model) {
-	model.addAttribute("user", bank.getFirstUser());
-  return "user";
+	public String helloUser(Model model) {
+		model.addAttribute("user", userService.findByUsername("dick"));
+		return "user";
 	}
+	
 }

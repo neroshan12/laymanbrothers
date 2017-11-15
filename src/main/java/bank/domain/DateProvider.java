@@ -1,4 +1,4 @@
-package domain;
+package bank.domain;
 
 import java.util.Calendar;
 import java.util.Date;
