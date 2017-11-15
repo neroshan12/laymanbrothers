@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import bank.domain.CurrentAccount;
+import bank.domain.SavingsAccount;
 import bank.domain.User;
 import bank.repositories.UserRepository;
 import bank.services.UserService;
@@ -14,6 +16,8 @@ import bank.services.UserService;
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
+	
+	private AccountService AccountService;
 	
 	@Autowired
 	public UserServiceImpl(UserRepository userRepository) {
@@ -44,7 +48,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveOrUpdate(User user) {
-        userRepository.save(user);
+        user.setSavingsAccount(new SavingsAccount(1000));
+        user.setCurrentAccount(new CurrentAccount(1000));
+        userRepository.save(user);	
         return user;
     }
 }
