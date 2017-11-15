@@ -26,8 +26,7 @@ import bank.domain.User;
  	@Test
      public void bank() {
          assertTrue(classUnderTest instanceof Bank);
-     }
-
+     } 	
     
     @Test
     public void testFindById() {
@@ -126,7 +125,7 @@ import bank.domain.User;
  		classUnderTest.findById(0).savingsAccount.deposit(90);
  		classUnderTest.findById(0).savingsAccount.deposit(78);
  		 
- 		classUnderTest.findById(1).openCurrentAccount();
+ 		classUnderTest.findById(1).openSavingsAccount();
  		classUnderTest.findById(1).savingsAccount.deposit(10);
  		classUnderTest.findById(1).savingsAccount.deposit(62);
  		   
@@ -134,6 +133,5 @@ import bank.domain.User;
  		assertEquals(148.0, classUnderTest.findById(0).getSavingsAccount().getBalance());
  		assertEquals(92.0, classUnderTest.findById(1).getSavingsAccount().getBalance());
     }
- 
  
  }
