@@ -1,11 +1,12 @@
 
 
- package domain;
+package domain;
  
- import static org.junit.Assert.*;
+import static org.junit.Assert.*;
+
  
- import org.junit.Before;
- import org.junit.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import bank.domain.Bank;
 import bank.domain.User;
@@ -25,10 +26,25 @@ import bank.domain.User;
      }
  	
     @Test
-    public void testGetAllUsers() {
+    public void testGetFirstUser() {
          User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
          classUnderTest.addUser(nero);
-         assertEquals("Nero", classUnderTest.getUsers());
+         assertEquals(nero, classUnderTest.getFirstUser());
+     }
+ 	
+    
+    @Test
+    public void testFindById() {
+         User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
+         classUnderTest.addUser(nero);
+         assertEquals(nero, classUnderTest.findById(0));
+     }
+    
+    @Test
+    public void testFindByName() {
+         User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
+         classUnderTest.addUser(nero);
+         assertEquals(nero, classUnderTest.findByName("nsiva"));
      }
  
  }
