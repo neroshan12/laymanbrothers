@@ -1,14 +1,17 @@
 package domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Date;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import bank.domain.DateProvider;
 import bank.domain.Transaction;
-
 class TransactionTest {
 	
 
@@ -28,6 +31,17 @@ class TransactionTest {
 	public void testGetAmount() {
 		int result = 100;
 		assertEquals(result, classUnderTest.getAmount());
+	}
+	
+	@Test
+	public void testGetTransactionDate() {
+		Date result = DateProvider.getInstance().now();
+		System.out.println(classUnderTest.getTransactionDate());
+		assertThat(result, classUnderTest.getTransactionDate());
+	}
+
+	private void assertThat(Date result, Date transactionDate) {
+		// TODO Auto-generated method stub
 	}
 	
 }

@@ -33,8 +33,23 @@ public class UserTest {
 	}
 	
 	@Test
+	public void testSetFirstName() {
+		String result = "Nero";
+		classUnderTest.setFirstName("Nero");
+		assertEquals(result, classUnderTest.getFirstName());
+	}
+	
+	
+	@Test
 	public void testGetLastName() {
 		String result = "Ingram";
+		assertEquals(result, classUnderTest.getLastName());
+	}
+	
+	@Test
+	public void testSetLastName() {
+		String result = "Siva";
+		classUnderTest.setLastName("Siva");
 		assertEquals(result, classUnderTest.getLastName());
 	}
 	
@@ -45,8 +60,22 @@ public class UserTest {
 	}
 	
 	@Test
+	public void testSetEmail() {
+		String result = "nero@nero.com";
+		classUnderTest.setEmail("nero@nero.com");
+		assertEquals(result, classUnderTest.getEmail());
+	}
+	
+	@Test
 	public void testGetUsername() {
 		String result = "gijoe";
+		assertEquals(result, classUnderTest.getUsername());
+	}
+	
+	@Test
+	public void testSetUsername() {
+		String result = "nsiva";
+		classUnderTest.setUsername("nsiva");
 		assertEquals(result, classUnderTest.getUsername());
 	}
 	
