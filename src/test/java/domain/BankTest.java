@@ -3,7 +3,8 @@
 package domain;
  
 
- import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
  
@@ -26,14 +27,7 @@ import bank.domain.User;
      public void bank() {
          assertTrue(classUnderTest instanceof Bank);
      }
- 	
-    @Test
-    public void testGetFirstUser() {
-         User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
-         classUnderTest.addUser(nero);
-         assertEquals(nero, classUnderTest.getFirstUser());
-     }
- 	
+
     
     @Test
     public void testFindById() {
