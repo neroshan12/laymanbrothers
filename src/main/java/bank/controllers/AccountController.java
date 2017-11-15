@@ -10,75 +10,73 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import bank.domain.CurrentAccount;
+import bank.domain.SavingsAccount;
 import bank.domain.Transaction;
 import bank.domain.User;
+import bank.services.AccountService;
 import bank.services.UserService;
-import bank.domain.Bank;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
 @Controller
 public class AccountController {
 	
-private UserService userService;
-	
 	@Autowired
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
+	private UserService userService;
 
 	@RequestMapping(value = "/balance")
 	public String users(Model model) {
-		model.addAttribute("user", accountWill);
+		User user = userService.findById(1);
+		SavingsAccount savingsAccount = user.getSavingsAccount();
+		CurrentAccount currentAccount = user.getCurrentAccount();
+		
+		model.addAttribute("user", user);
+		model.addAttribute("savingsAccount", savingsAccount);
+		model.addAttribute("currentAccount", currentAccount);
 		return "balance";
 	}
 	
 	@RequestMapping(value = "/accounts")
 	public String accounts(Model model) {
-		model.addAttribute("user", accountWill);
+		User user = userService.findById(1);
+		model.addAttribute("user", user);
 		return "accounts";
 	}
 	
 	@RequestMapping(value = "/deposit")
 	public String deposits(Model model) {
-		model.addAttribute("user", accountWill);
+		User user = userService.findById(1);
+		model.addAttribute("user", user);
 		return "deposit";
 	}
 	
 	@RequestMapping(value = "/deposit", method = RequestMethod.POST)
 	public String deposit(@ModelAttribute("amount") int amount) {
-		accountWill.currentAccount.deposit(amount);
+		User user = userService.findById(1);
+		user.currentAccount.deposit(amount);
 		return "redirect:/balance";
 	}
 	
 	@RequestMapping(value = "/withdraw")
 	public String withdraws(Model model) {
-		model.addAttribute("user", accountWill);
+		User user = userService.findById(1);
+		model.addAttribute("user", user);
 		return "withdraw";
 	}
 	
 	@RequestMapping(value = "/withdraw", method = RequestMethod.POST)
 	public String withdraw(@ModelAttribute("withdraw") int amount) {
-		accountWill.currentAccount.withdraw(amount);
+		User user = userService.findById(1);
+		user.currentAccount.withdraw(amount);
 		return "redirect:/balance";
 	}
 	
 	@RequestMapping(value = "/transactions")
 	public String transactions(Model model) {
-		model.addAttribute("user", accountWill);
+		User user = userService.findById(1);
+		model.addAttribute("user", user);
 		return "transactions";
 	}
 	
-//	@RequestMapping(value = "/admin")
-//	public String admin(Model model) {
-//		model.addAttribute("accounts", accountWill);
-//		model.addAttribute("accounts1", accountJoe);
-//		model.addAttribute("accounts2", accountKeith);
-//		model.addAttribute("accounts3", accountMarcus);
-//		model.addAttribute("accounts4", accountEtienne);
-//		model.addAttribute("accounts5", accountNero);
-//
-//		return "admin";
-//	}
-//	
+
 }

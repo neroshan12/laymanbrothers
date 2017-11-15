@@ -14,28 +14,61 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 @Entity
-public class CurrentAccount extends Account {
+public class CurrentAccount {
 	
 	public static final double DAILY_INTEREST = 1.002;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
+	public int balance;
 	
-    @OneToMany(mappedBy = "currentAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "currentAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
 	public List<Transaction> transactions;
-
-	public CurrentAccount(double balance) {
-		super(balance);
+	
+	public CurrentAccount() {
 	}
 
-	public long getId() {
+	public CurrentAccount(int balance) {
+		super();
+		this.balance = balance;
+	}
+
+	public int getId() {
 		return id;
 	}
 	
+	public int getBalance() {
+		return balance;
+	}
+	
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+
+	public static double getDailyInterest() {
+		return DAILY_INTEREST;
+	}
+
 	public void addInterest() {
 		balance *= DAILY_INTEREST;		
 	}
 	
+	public void deposit(int amount) {
+		balance += amount;
+	}
+	
+	public void withdraw(int amount) {
+		balance -= amount;
+	}
 }
+
