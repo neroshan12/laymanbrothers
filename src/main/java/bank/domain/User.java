@@ -39,7 +39,6 @@ public class User {
 		this.savingsAccount = new SavingsAccount(0);
 
 	}
-	public User() {}
 	
 	public String getFirstName() {
 		return firstName;

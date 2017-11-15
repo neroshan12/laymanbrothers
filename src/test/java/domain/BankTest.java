@@ -26,8 +26,7 @@ import bank.domain.User;
  	@Test
      public void bank() {
          assertTrue(classUnderTest instanceof Bank);
-     }
-
+     } 	
     
     @Test
     public void testFindById() {
@@ -41,6 +40,13 @@ import bank.domain.User;
          User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
          classUnderTest.addUser(nero);
          assertEquals(nero, classUnderTest.findByName("nsiva"));
+     }
+    
+    @Test
+    public void testFailingFindByName() {
+         User nero = new User("Nero", "Siva", "nero@nero.com", "nsiva");
+         classUnderTest.addUser(nero);
+         assertEquals(null, classUnderTest.findByName("joe"));
      }
     
     @Test
@@ -105,6 +111,27 @@ import bank.domain.User;
  		classUnderTest.transfer(20,"nsiva","savings account","jack","current account");
  		assertEquals(58.0, classUnderTest.findById(0).getSavingsAccount().getBalance());
  		assertEquals(30.0, classUnderTest.findById(1).getCurrentAccount().getBalance());
+    }
+    
+    @Test
+    public void testTransferASavingsBSavings()
+    {
+   		User user1 = new User("Nero", "Siva", "nero@nero.com", "nsiva");
+   		User user2 = new User("Jack", "jack", "nero@nerod.com", "jack");
+ 		classUnderTest.addUser(user1);
+ 		classUnderTest.addUser(user2);
+
+ 		classUnderTest.findById(0).openSavingsAccount();
+ 		classUnderTest.findById(0).savingsAccount.deposit(90);
+ 		classUnderTest.findById(0).savingsAccount.deposit(78);
+ 		 
+ 		classUnderTest.findById(1).openSavingsAccount();
+ 		classUnderTest.findById(1).savingsAccount.deposit(10);
+ 		classUnderTest.findById(1).savingsAccount.deposit(62);
+ 		   
+ 		classUnderTest.transfer(20,"nsiva","savings account","jack","savings account");
+ 		assertEquals(148.0, classUnderTest.findById(0).getSavingsAccount().getBalance());
+ 		assertEquals(92.0, classUnderTest.findById(1).getSavingsAccount().getBalance());
     }
  
  }

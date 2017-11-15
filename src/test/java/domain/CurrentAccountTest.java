@@ -29,6 +29,13 @@ public class CurrentAccountTest {
 	}
 	
 	@Test
+	public void testSetBalance() {
+		double result = 10.00;
+		classUnderTest.setBalance(10.00);
+		assertEquals(result, classUnderTest.getBalance());
+	}
+	
+	@Test
 	public void testDeposit() {
 		int result = 100;
 		classUnderTest.deposit(100);
@@ -41,6 +48,12 @@ public class CurrentAccountTest {
 		classUnderTest.deposit(100);
 		classUnderTest.withdraw(50);
 		assertEquals(result, classUnderTest.getBalance());
+	}
+	
+	@Test
+	public void testGetID() {
+		int result = 0;
+		assertEquals(result, classUnderTest.getId());
 	}
 	
 	@Test
