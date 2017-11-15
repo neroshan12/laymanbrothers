@@ -53,7 +53,16 @@ public class AccountServiceImpl implements AccountService {
 	        
 	        Transaction transaction = new Transaction(amount);
 	        transactionService.saveOrUpdate(transaction);
-	            
 	  }
+	        
+	  public void withdraw(int amount, User user) {
+	  		  
+		    CurrentAccount currentAccount = user.getCurrentAccount();
+		    currentAccount.withdraw(amount);
+		    currentAccountRepository.save(currentAccount);
+		        
+		    Transaction transaction = new Transaction(amount);
+		    transactionService.saveOrUpdate(transaction);
+	  }        
 	 
 }

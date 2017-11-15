@@ -10,7 +10,7 @@
     <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
  	<p>Amount to withdraw:</p>
 	<form th:action="@{/withdraw}" method="post">
-    <input th:value="${amount}" name="withdraw" id="withdraw" type="number" />
+    <input th:value="${amount}" name="amount" id="amount" type="number" />
     <button type="submit">Withdraw</button>
     </form>
     
