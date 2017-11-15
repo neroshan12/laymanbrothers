@@ -34,7 +34,5 @@ public class AccountServiceImpl implements AccountService {
 
 	        return currentAccountRepository.findById(currentAccount.getId());
 	    }
-	
-	 
 	 
 }
