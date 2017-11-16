@@ -13,7 +13,22 @@
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="stylishportfolio/js/stylish-portfolio.js"></script>
     
- <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">LAYMAN BROTHERS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Bank</a></li>
+      <li><a href="#">Borrow</a></li>
+      <li><a href="#">Save</a></li>
+    </ul>
+  </div>
+</nav>
+   
+ <p style="padding-top: 80px;">Welcome</p><p th:text="${user.getFirstName()}"></p>
   <p>Amount to deposit:</p>
   <form th:action="@{/deposit}" method="post">
     <input th:value="${amount}" name="amount" id="amount" type="number" />
