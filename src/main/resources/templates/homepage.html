@@ -7,6 +7,7 @@
     <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
 </head>
+
 <body>
     <script src="jquery/jquery-3.2.1.min.js"></script>
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -41,18 +42,28 @@
     <header class="header" id="top">
       <div class="text-vertical-center">
         <h1 id="homepageheader">LAYMAN BROTHERS</h1>
-        <h4 class="whitestyle">Too Big to Fail</h4>
+        <h4 class="whitestyle">"Too Big to Fail"</h4>
         <br></br>
-        <center>
-          <h5 class="whitestyle">Do you want to open a new account? </h5>
-          <form method="get" action="/newUser">
-          <input type="submit" value="Sign Up"/>
-          </form>
-          <h5 class="whitestyle">Already an account holder?</h5>
-          <button id="login">Login</button>
-         </center>
-         <br></br>
-        <a href="#services" class="btn btn-dark btn-lg js-scroll-trigger">Meet The Team</a>
+        <left>
+        <table>
+        <tr>
+        <th><form method="get" action="/newUser">
+          <button type="submit" value="Sign Up" id="signup" href="#services" class="btn btn-dark btn-lg js-scroll-trigger">Sign up</button>
+          	</form></th>
+          </tr>
+              <tr>
+          	<td>
+          <button type="submit" id="login" href="#services" class="btn btn-dark btn-lg js-scroll-trigger">Login</button>
+     		</td>
+     		 </tr>
+     	  <tr>
+     	   <td>
+        	  <a href="#services" class="btn btn-dark btn-lg js-scroll-trigger">Meet The Founders</a>
+    		    </td>
+    		    </tr>
+    			
+         	</table>
+         </left>
       </div>
     </header>
 
@@ -60,7 +71,7 @@
     <section id="about" class="about">
       <div class="container text-center">
         <h2 class="blackstyle">Let our patented Java Online Banking System (JOBS) allow you to rest easy knowing your assets are secure!</h2>
-        <p class="lead">(Disclaimer: Please don't send sensitive information with this application)</p>
+        <p class="lead">(Disclaimer: Please don't send sensitive information with this application, we will take all of your money)</p>
       </div>
       <!-- /.container -->
     </section>
@@ -70,7 +81,7 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-lg-12 mx-auto">
-            <h2 class="whitestyle">Meet the founders</h2>
+            <h2 class="whitestyle">Meet The Founders</h2>
             <hr class="medium">
             <div class="row">
               <div class="col-md-2 col-sm-2">
@@ -177,7 +188,7 @@
     <!-- Callout -->
     <aside class="callout">
       <div class="text-vertical-center">
-		<h1 class="bluestyle">£150 when you sign up!</h1>      </div>
+		<h1 class="bluestyle">£1500 welcome bonus if you sign up today</h1>      </div>
     </aside>
 
     <section class="about">
@@ -206,7 +217,7 @@
             </h4>
             <p size="+2" >Makers Academy
               <br></br>50 Commercial St,
-              <br></br> London, E1 6LT</p>
+              <br></br>London<br></br>E1 6LT</p>
             <ul class="list-unstyled">
 
               <li>
