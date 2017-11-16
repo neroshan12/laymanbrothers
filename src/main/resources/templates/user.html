@@ -3,17 +3,32 @@
 <head>
     <title>User details</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+    <link href="../static/css/user.css" th:href="@{/css/user.css}" rel="stylesheet" />
 </head>
 
 <body>
-	<h1>Your Details:</h1>
-   	<p th:text="${user.getFirstName()}"> </p> 
-    <p th:text="${user.getLastName()}"> </p> 
-    <p th:text="${user.getEmail()}"> </p> 
-    <p th:text="${user.getUsername()}">  </p>
-    <p th:text="${user.getAddress()}">  </p>
- 
-    
-    <a href="/balance">View your accounts</a> 
+  <script src="jquery/jquery-3.2.1.min.js"></script>
+  <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+  <script src="stylishportfolio/js/stylish-portfolio.js"></script>
+
+	<h1>Welcome to Layman Brothers, <h1 th:text="${user.getFirstName()}"></h1> <h1 th:text="${user.getLastName()}"></h1></h1>
+  <br></br>
+  <br></br>
+
+    <h2>Here are your details:</h2>
+    <h3> Your e-mail: </h3><h3 class="whitestyle" th:text="${user.getEmail()}"> </h3>
+    <h3> Your username: </h3><h3 class="whitestyle" th:text="${user.getUsername()}">  </h3>
+    <h3> Your address: </h3><h3 class="whitestyle" th:text="${user.getAddress()}">  </h3>
+
+    <br></br>
+    <br></br>
+
+    <h2>Would you like to check your accounts?</h2>
+    <h3>Hit the button below</h3>
+    <br></br>
+    <a class="whitestyle" href="/balance">View my accounts</a>
 </body>
 </html>
