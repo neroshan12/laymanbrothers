@@ -7,8 +7,9 @@
 <body>
     <h1 class='heading'>Your Transactions</h1>
     
-    <ul data-th-each="transaction : ${accounts.transactions}">
+    <ul data-th-each="transaction : ${user.currentAccount.transactions}">
     		<li data-th-text="${transaction.amount}">...</li>
+    		<li style="list-style:none" data-th-text="${transaction.description}">...</li>
     		<li	style="list-style:none" data-th-text="${transaction.transactionDate}">...</li>
     </ul>
     
