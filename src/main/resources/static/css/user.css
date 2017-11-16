@@ -17,11 +17,11 @@ a.greystyle{
 }
 
 
-.header {
+.header2 {
   position: relative;
   display: table;
   width: 100%;
-  height: 100%;
+  height: 25%;
   background-color: #ffffff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -29,6 +29,14 @@ a.greystyle{
   background-size: cover;
 }
 
+h1.header2{
+  color: #3378B6
+}
+
 .formpad {
   padding: 100px 0;
+}
+
+h4.blackstyle{
+	color: #000000
 }

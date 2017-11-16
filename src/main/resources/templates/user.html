@@ -14,24 +14,48 @@
   <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="stylishportfolio/js/stylish-portfolio.js"></script>
 
-	<h1>Welcome to Layman Brothers, <span th:text="${user.getFirstName()}"></span> <span th:text="${user.getLastName()}"></span></h1>
-	
+  <!-- New Nav -->
 
-	
-  <br></br>
-  <br></br>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">LAYMAN BROTHERS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Bank</a></li>
+      <li><a href="#">Borrow</a></li>
+      <li><a href="#">Save</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <h2>Here are your details:</h2>
-    <h3> Your e-mail: </h3><h3 class="whitestyle" th:text="${user.getEmail()}"> </h3>
-    <h3> Your username: </h3><h3 class="whitestyle" th:text="${user.getUsername()}">  </h3>
-    <h3> Your address: </h3><h3 class="whitestyle" th:text="${user.getAddress()}">  </h3>
+ <br></br>
 
-    <br></br>
-    <br></br>
+   <header class="header2" id="userheader">
+     <div class="text-vertical-center">
+       <br></br>
+	   <h1 class="header2" id="userheader">Welcome to Layman Brothers, <span th:text="${user.getFirstName()}"></span>&nbsp;<span th:text="${user.getLastName()}"></span></h1>
+     </div>
+   </header>
 
-    <h2>Would you like to check your accounts?</h2>
-    <h3>Hit the button below</h3>
-    <br></br>
-    <a class="whitestyle" href="/balance">View my accounts</a>
+<div class="col-lg-12 mx-auto">
+    <div class="col-md-6 col-sm-6">
+      <div class="container text-left">
+      <h2>Here are your details:</h2>
+      <h4 class="blackstyle"> Your e-mail: </h4><h5 class="whitestyle" th:text="${user.getEmail()}"> </h5>
+      <h4 class="blackstyle"> Your username: </h4><h5 class="whitestyle" th:text="${user.getUsername()}">  </h5>
+      <h4 class="blackstyle"> Your address: </h4><h5 class="whitestyle" th:text="${user.getAddress()}">  </h5>
+    </div>
+  </div>
+     <div class="col-md-6 col-sm-6">
+       <br></br>
+       <br></br>
+      <h3>Would you like to check your accounts?</h3>
+       <br></br>
+    <a class="greystyle" href="/balance">View my accounts</a>
+  </div>
+</div>
 </body>
 </html>
