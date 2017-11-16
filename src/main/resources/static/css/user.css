@@ -8,6 +8,10 @@ p.blackstyle{
   color: #000000
 }
 
+a.whitestyle{
+  color: #ffffff
+}
+
 .header {
   position: relative;
   display: table;
