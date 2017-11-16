@@ -52,8 +52,9 @@ public class AccountServiceImpl implements AccountService {
 	        currentAccountRepository.save(currentAccount);
 	        
 	        String description = "Deposit";
+	        String counterparty = "Current Account";
 	        
-	        Transaction transaction = new Transaction(amount, currentAccount, description);
+	        Transaction transaction = new Transaction(amount, currentAccount, description, counterparty);
 	        transactionService.saveOrUpdate(transaction);
 	  }
 	        
@@ -64,9 +65,24 @@ public class AccountServiceImpl implements AccountService {
 		    currentAccountRepository.save(currentAccount);
 		     
 		    String description = "Withdraw";
+		    String counterparty = "Current Account";
 		   
-		    Transaction transaction = new Transaction(amount, currentAccount, description);
+		    Transaction transaction = new Transaction(amount, currentAccount, description, counterparty);
 		    transactionService.saveOrUpdate(transaction);
 	  }        
+	  
+	  public void transferToSavings(int amount, User user, SavingsAccount savingsAccount) {
+		  CurrentAccount currentAccount = user.getCurrentAccount();
+		  user.transferToSaving(amount);
+		  currentAccountRepository.save(currentAccount);
+		  
+		  String description = "Fund Transfer";
+		  String counterparty = "Savings Account";
+		   
+		  Transaction transaction = new Transaction(amount, currentAccount, description, counterparty);
+		  transactionService.saveOrUpdate(transaction);
+		  
+	  }
+
 	 
 }

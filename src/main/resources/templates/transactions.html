@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Your Transactions</title>
+    <title>Your Current Account</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
     <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
@@ -14,13 +14,27 @@
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="stylishportfolio/js/stylish-portfolio.js"></script>
     
-    <h1 class='heading'>Your Transactions</h1>
+    <p>Welcome</p><p th:text="${user.getFirstName()}">!</p>
+    
+    <h4 class='statement'>Your Current Account balance is</h4>
+    
+    <p id="currentbalance" th:text="${currentAccount.getBalance()}"></p>
+    
+    <h1 class='heading'>Your Statement</h1>
     
     <ul data-th-each="transaction : ${user.currentAccount.transactions}">
     		<li data-th-text="${transaction.amount}">...</li>
     		<li style="list-style:none" data-th-text="${transaction.description}">...</li>
     		<li	style="list-style:none" data-th-text="${transaction.transactionDate}">...</li>
+    		li	style="list-style:none" data-th-text="${transaction.description}">...</li>
+    		li	style="list-style:none" data-th-text="${transaction.counterparty}">...</li>
     </ul>
+    
+    <h1> Transfer to Savings Account </h1>
+    <form th:action="@{/transfer}" method="post">
+    		<input th:value="${amount}" name="amount" id="amount" type="number" />
+    		<button type="submit">Transfer</button>
+    </form>
     
     
 </body>
