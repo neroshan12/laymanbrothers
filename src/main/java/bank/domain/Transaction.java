@@ -15,7 +15,7 @@ public class Transaction {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;	
-	public int amount;
+	public double amount;
 	public Date transactionDate;
 	public String description;
 	public String counterparty;
@@ -28,7 +28,7 @@ public class Transaction {
 	@JoinColumn(name = "savings_account_id")
 	private SavingsAccount savingsAccount;
 	
-	public Transaction(int amount, CurrentAccount currentAccount, String description, String counterparty) {
+	public Transaction(double amount, CurrentAccount currentAccount, String description, String counterparty) {
 		this.amount = amount;
 		this.transactionDate = DateProvider.getInstance().now();
 		this.currentAccount = currentAccount;
@@ -36,7 +36,6 @@ public class Transaction {
 		this.counterparty = counterparty;
 	}
 
-	public Transaction() {}
 
 	public String getDescription() {
 		return description;
@@ -54,7 +53,7 @@ public class Transaction {
 		this.counterparty = counterparty;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 	public Date getTransactionDate() {

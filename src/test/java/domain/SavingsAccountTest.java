@@ -22,7 +22,6 @@ public class SavingsAccountTest {
         assertTrue(classUnderTest instanceof SavingsAccount);
     }
 
-
 	@Test
 	public void testGetBalance() {
 		int result = 0;
@@ -42,25 +41,10 @@ public class SavingsAccountTest {
 		assertEquals(result, classUnderTest.getId());
 	}
 	
-	@Test
-	public void testDeposit() {
-		int result = 100;
-		classUnderTest.deposit(100);
-		assertEquals(result, classUnderTest.getBalance());
-	}
-	
-	@Test
-	public void testWithdraw() {
-		int result = 50;
-		classUnderTest.deposit(100);
-		classUnderTest.withdraw(50);
-		assertEquals(result, classUnderTest.getBalance());
-	}
 	
 	@Test
 	public void testAddInterest() {
 		double result = 105.11401320407893;
-		classUnderTest.deposit(100.00);
 		for(int i=0; i<10; i++){
 	        classUnderTest.addInterest();
 	     }

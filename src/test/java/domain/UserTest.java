@@ -19,13 +19,9 @@ public class UserTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		classUnderTest = new User("Joe", "Ingram", "joe@joe.com", "gijoe");
+		classUnderTest = new User("Joe", "Ingram", "joe@joe.com", "gijoe", "Croydon", "Cronx");
 	}
 
-	@Test
-    public void user() {
-        assertTrue(classUnderTest instanceof User);
-    }
 	
 	@Test
 	public void testGetFirstName() {
@@ -81,23 +77,23 @@ public class UserTest {
 	}
 	
 	@Test
-	public void testOpenCurrentAccount() {
-		classUnderTest.openCurrentAccount();
-		assertTrue(classUnderTest.currentAccount instanceof CurrentAccount);
+	public void testSetAddress() {
+		String result = "Croydon";
+		classUnderTest.setAddress("Croydon");
+		assertEquals(result, classUnderTest.getAddress());
 	}
 	
 	@Test
-	public void testOpenSavingsAccount() {
-		classUnderTest.openSavingsAccount();
-		assertTrue(classUnderTest.savingsAccount instanceof SavingsAccount);
+	public void testSetPassword() {
+		String result = "neropassword";
+		classUnderTest.setPassword("neropassword");
+		assertEquals(result, classUnderTest.getPassword());
 	}
-	
+		
 	@Test //test 
 	public void testTransferToSavings() {
-		int result = 50;
-		classUnderTest.openSavingsAccount();
-		classUnderTest.openCurrentAccount();
-		classUnderTest.currentAccount.deposit(150.00);
+		double result = 50.00;
+		classUnderTest.depositCurrent(150.00);
 		classUnderTest.transferToSaving(100.00);
 		assertEquals(result, classUnderTest.currentAccount.getBalance());
 	}
@@ -105,27 +101,23 @@ public class UserTest {
 	@Test //test 
 	public void testFailTransferToSavings() {
 		int result = 10;
-		classUnderTest.openSavingsAccount();
-		classUnderTest.openCurrentAccount();
-		classUnderTest.currentAccount.deposit(10.00);
+		classUnderTest.depositCurrent(10.00);
 		classUnderTest.transferToSaving(130.00);
 		assertEquals(result, classUnderTest.currentAccount.getBalance());
 	}
 	
 	@Test
 	public void testTransferToCurrent() {
-		int result = 50;
-		classUnderTest.savingsAccount.deposit(150);
-		classUnderTest.transferToCurrent(100);
+		double result = 50.00;
+		classUnderTest.depositSavings(150.00);
+		classUnderTest.transferToCurrent(100.00);
 		assertEquals(result, classUnderTest.savingsAccount.getBalance());
 	}
 	
 	@Test //test 
 	public void testFailTransferToCurrent() {
 		int result = 10;
-		classUnderTest.openSavingsAccount();
-		classUnderTest.openCurrentAccount();
-		classUnderTest.savingsAccount.deposit(10.00);
+		classUnderTest.depositSavings(10.00);
 		classUnderTest.transferToCurrent(100.00);
 		assertEquals(result, classUnderTest.savingsAccount.getBalance());
 	}

@@ -19,7 +19,7 @@ class TransactionTest {
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		classUnderTest = new Transaction(100);
+		classUnderTest = new Transaction(100.00, null, null, null);
 	}
 
 	@Test
@@ -29,8 +29,8 @@ class TransactionTest {
 	
 	@Test
 	public void testGetAmount() {
-		int result = 100;
-		assertEquals(result, classUnderTest.getAmount());
+		double result = 100.00;
+		assertEquals(result, classUnderTest.getAmount(), 0.00);
 	}
 	
 	@Test
