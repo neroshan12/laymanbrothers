@@ -6,27 +6,45 @@
     <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
     <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+    <link href="../static/css/newuser.css" th:href="@{/css/newuser.css}" rel="stylesheet" />
 </head>
 <body>
   <script src="jquery/jquery-3.2.1.min.js"></script>
   <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="stylishportfolio/js/stylish-portfolio.js"></script>
- 
 
-	<h1 class='blackstyle'>Welcome to Laymans Brothers</h1>
+<!--   <div class="row text-center">
+   <div class="col-lg-12 mx-auto">
+     <header class="header2" id="top">
+      <div class="text-vertical-center">
 
-	<h3 class='blackstyle'>Enter your details:</h3>
+     </div>
+    </header>
+   </div>
+ </div> -->
 
-  	<form id="register" class="pure-form" th:action="@{/newUser}" method="post">
-  	  <fieldset>
-        <p>First Name: <input type="text" placeholder="Enter first name here" th:value="${firstName}" name="firstName" id="firstName" required="this is required" /></p>
-		<p>Last Name: <input type="text" placeholder="Enter last name here" th:value="${lastName}" name="lastName" id="lastName" required="this is required" /></p>
-	    <p>Address: <input type="text" placeholder="Enter your house number and postcode here" th:value="${address}" name="address" id="address" required="this is required" /></p>
-        <p>E-mail: <input type="text" placeholder="E-mail" th:value="${email}" name="email" id="email" required="this is required" /></p>
-        <p>Username: <input type="text" placeholder="Username" th:value="${username}" name="username" id="username" required="this is required" /></p>
-        <p>Password: <input type="password" placeholder="Password" th:value="${password}" name="password" id="password" required="this is required"/></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-      </fieldset>
-     </form>
+   <section id="formpageheader" class="formpad">
+     <div class="container text-center">
+       <h1> Account Registration </h1>
+       <h3 class='whitestyle'>Please enter your details:</h3>
+       <br></br>
+     <center>
+        <form id="register" class="pure-form" th:action="@{/newUser}" method="post">
+          <fieldset>
+       <p>First Name: <input type="text" placeholder="Enter first name here" th:value="${firstName}" name="firstName" id="firstName" required="this is required" /></p>
+       <p>Last Name: <input type="text" placeholder="Enter last name here" th:value="${lastName}" name="lastName" id="lastName" required="this is required" /></p>
+       <p>Address: <input type="text" placeholder="Enter your house number and postcode here" th:value="${address}" name="address" id="address" required="this is required" /></p>
+       <p>E-mail: <input type="text" placeholder="E-mail" th:value="${email}" name="email" id="email" required="this is required" /></p>
+       <p>Username: <input type="text" placeholder="Username" th:value="${username}" name="username" id="username" required="this is required" /></p>
+       <p>Password: <input type="password" placeholder="Password" th:value="${password}" name="password" id="password" required="this is required"/></p>
+       <p class="blackstyle"><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+          </fieldset>
+        </form>
+     </center>
+     </div>
+     <!-- /.container -->
+   </section>
+
+
 </body>
 </html>
