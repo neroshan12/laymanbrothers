@@ -84,7 +84,7 @@ public class AccountController {
 	
 		model.addAttribute("user", user);
 		model.addAttribute("currentAccount", currentAccount);
-		return "transactions";
+		return "currentAccount";
 	}
 	
 	@RequestMapping(value = "/transfer")
