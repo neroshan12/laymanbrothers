@@ -51,7 +51,9 @@ public class AccountServiceImpl implements AccountService {
 	        currentAccount.deposit(amount);
 	        currentAccountRepository.save(currentAccount);
 	        
-	        Transaction transaction = new Transaction(amount);
+	        String description = "Deposit";
+	        
+	        Transaction transaction = new Transaction(amount, currentAccount, description);
 	        transactionService.saveOrUpdate(transaction);
 	  }
 	        
@@ -60,8 +62,10 @@ public class AccountServiceImpl implements AccountService {
 		    CurrentAccount currentAccount = user.getCurrentAccount();
 		    currentAccount.withdraw(amount);
 		    currentAccountRepository.save(currentAccount);
-		        
-		    Transaction transaction = new Transaction(amount);
+		     
+		    String description = "Withdraw";
+		   
+		    Transaction transaction = new Transaction(amount, currentAccount, description);
 		    transactionService.saveOrUpdate(transaction);
 	  }        
 	 
