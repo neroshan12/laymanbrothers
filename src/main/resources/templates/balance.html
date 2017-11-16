@@ -18,12 +18,12 @@
      <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
     <h4 class='statement'>Your Current Account balance is</h4>
     
-     <p th:text="${currentAccount.getBalance()}"></p>
+     <p id="currentbalance" th:text="${currentAccount.getBalance()}"></p>
     
     
       <h4 class='statement'>Your Savings Account balance is</h4>
     
-     <p th:text="${savingsAccount.getBalance()}"></p>
+     <p id="savingsbalance" th:text="${savingsAccount.getBalance()}"></p>
      
     <a class="greystyle" th:href="@{/withdraw}">Withdraw</a> <a class="greystyle" th:href="@{/deposit}">Deposit</a>
     
