@@ -1,0 +1,25 @@
+body{
+  background-color: #3378B6;
+  text-align: center;
+  color: #ffffff
+}
+
+p.blackstyle{
+  color: #000000
+}
+
+.header {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.formpad {
+  padding: 100px 0;
+}
