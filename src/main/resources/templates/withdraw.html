@@ -3,8 +3,17 @@
 <head>
     <title>Account Balance page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+    <link href="../static/css/withdraw.css" th:href="@{/css/withdraw.css}" rel="stylesheet" />
 </head>
 <body>
+<script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="stylishportfolio/js/stylish-portfolio.js"></script>
+    
+    
     <h1 class='heading'>Welcome to Laymans Brothers</h1>
     
     <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
