@@ -1,19 +1,14 @@
 package domain;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import bank.domain.CurrentAccount;
-import bank.domain.SavingsAccount;
 import bank.domain.User;
 
-
 public class UserTest {
-
 
 	private User classUnderTest;
 	
@@ -100,7 +95,7 @@ public class UserTest {
 	
 	@Test //test 
 	public void testFailTransferToSavings() {
-		int result = 10;
+		double result = 10;
 		classUnderTest.depositCurrent(10.00);
 		classUnderTest.transferToSaving(130.00);
 		assertEquals(result, classUnderTest.currentAccount.getBalance());

@@ -22,16 +22,13 @@ public class SavingsAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	public int balance;
+	public double balance;
 	
 	@OneToMany(mappedBy = "savingsAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
 	public List<Transaction> transactions;
 	
-	public SavingsAccount() {
-	}
-
-	public SavingsAccount(int balance) {
+	public SavingsAccount(double balance) {
 		super();
 		this.balance = balance;
 	}
@@ -40,7 +37,7 @@ public class SavingsAccount {
 		return id;
 	}
 	
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 	
@@ -66,6 +63,14 @@ public class SavingsAccount {
 
 	public double getOverdraft() {
 		return OVERDRAFT;
+	}
+
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	
+	public void withdraw(double amount) {
+		balance -= amount;
 	}
 }
 

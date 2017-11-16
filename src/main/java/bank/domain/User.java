@@ -8,7 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+import bank.domain.CurrentAccount;
+import bank.domain.SavingsAccount;
+import bank.domain.User;
 
 @Entity
 @Table(name = "bankuser")
@@ -73,11 +75,21 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+	
+	public double getCurrentBalance() {
+		return currentAccount.balance;
+	}
+	
+	public double getSavingsBalance() {
+		return savingsAccount.balance;
+	}
 
 	public void transferToSaving(double amount) {
 		if ((currentAccount.getBalance() - amount) > currentAccount.getOverdraft()) {
 			currentAccount.balance -= amount;
 			savingsAccount.balance += amount;
+		} else {
+			return;
 		}
 	}
 
@@ -85,8 +97,11 @@ public class User {
 		if ((savingsAccount.getBalance() - amount) > savingsAccount.getOverdraft()) {
 			savingsAccount.balance -= amount;
 			currentAccount.balance += amount;
-		} 
+		} else {
+			return;
+		}
 	}
+		
 	
 	public void depositSavings(double amount) {
 			savingsAccount.balance += amount;

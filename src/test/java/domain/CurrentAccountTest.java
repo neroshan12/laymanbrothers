@@ -36,6 +36,18 @@ public class CurrentAccountTest {
 	}
 	
 	@Test
+	public void testGetDailyInterest() {
+		double result = 1.002;
+		assertEquals(result, CurrentAccount.getDailyInterest());
+	}
+	
+	@Test
+	public void testGetOverdraft() {
+		double result = -100.00;
+		assertEquals(result, classUnderTest.getOverdraft());
+	}
+	
+	@Test
 	public void testDeposit() {
 		int result = 100;
 		classUnderTest.deposit(100);
@@ -58,8 +70,8 @@ public class CurrentAccountTest {
 	
 	@Test
 	public void testAddInterest() {
+		classUnderTest = new CurrentAccount(100.00);
 		double result = 102.01809633680774;
-		classUnderTest.deposit(100.00);
 		for(int i=0; i<10; i++){
 	        classUnderTest.addInterest();
 	     }
