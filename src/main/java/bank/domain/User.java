@@ -24,6 +24,8 @@ public class User {
 	private String email;
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
+	private String address;
+	private String password;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	public CurrentAccount currentAccount;
@@ -31,6 +33,22 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL)
 	public SavingsAccount savingsAccount;
 	
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getFirstName() {
 		return firstName;
