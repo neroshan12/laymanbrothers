@@ -6,7 +6,7 @@
     <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
     <link href="/stylishportfolio/css/stylish-portfolio.css" rel="stylesheet"> </link>
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
-    <link href="../static/css/transactions.css" th:href="@{/css/transactions.css}" rel="stylesheet" />
+    <link href="../static/css/currentAccount.css" th:href="@{/css/currentAccount.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -26,8 +26,8 @@
     		<li data-th-text="${transaction.amount}">...</li>
     		<li style="list-style:none" data-th-text="${transaction.description}">...</li>
     		<li	style="list-style:none" data-th-text="${transaction.transactionDate}">...</li>
-    		li	style="list-style:none" data-th-text="${transaction.description}">...</li>
-    		li	style="list-style:none" data-th-text="${transaction.counterparty}">...</li>
+    		<li	style="list-style:none" data-th-text="${transaction.description}">...</li>
+    		<li	style="list-style:none" data-th-text="${transaction.counterparty}">...</li>
     </ul>
     
     <h1> Transfer to Savings Account </h1>
