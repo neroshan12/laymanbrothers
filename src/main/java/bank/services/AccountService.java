@@ -15,4 +15,6 @@ public interface AccountService {
 	void deposit(int amount, User user);
 	
 	void withdraw(int amount, User user);
+	
+	void transferToSavings(int amount, User user, SavingsAccount savingsAccount);
 }

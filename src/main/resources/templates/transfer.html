@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transfer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+
+<body>
+  <p>Welcome</p><p th:text="${user.getFirstName()}"></p>
+ 
+  <p>Boom! You have successfully transferred your funds</p>
+
+  <a th:href="@{/balance}">Go Back to Account</a>
+</body>
+
+</html>

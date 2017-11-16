@@ -18,6 +18,7 @@ public class Transaction {
 	public int amount;
 	public Date transactionDate;
 	public String description;
+	public String counterparty;
 	
 	@ManyToOne
 	@JoinColumn(name = "current_account_id")
@@ -27,19 +28,35 @@ public class Transaction {
 	@JoinColumn(name = "savings_account_id")
 	private SavingsAccount savingsAccount;
 	
-	public Transaction(int amount, CurrentAccount currentAccount, String description) {
+	public Transaction(int amount, CurrentAccount currentAccount, String description, String counterparty) {
 		this.amount = amount;
 		this.transactionDate = DateProvider.getInstance().now();
 		this.currentAccount = currentAccount;
 		this.description = description;
+		this.counterparty = counterparty;
 	}
 
 	public Transaction() {}
-	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCounterparty() {
+		return counterparty;
+	}
+
+	public void setCounterparty(String counterparty) {
+		this.counterparty = counterparty;
+	}
+
 	public int getAmount() {
 		return amount;
 	}
-
 	public Date getTransactionDate() {
 		return transactionDate;
 	}

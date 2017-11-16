@@ -77,12 +77,38 @@ public class AccountController {
 		return "redirect:/balance";
 	}
 	
-	@RequestMapping(value = "/transactions")
+	@RequestMapping(value = "/currentAccount")
 	public String transactions(Model model) {
 		User user = userService.findById(1);
+		CurrentAccount currentAccount = user.getCurrentAccount();
+	
 		model.addAttribute("user", user);
+		model.addAttribute("currentAccount", currentAccount);
 		return "transactions";
 	}
+	
+	@RequestMapping(value = "/transfer")
+	public String transgerPage(Model model) {
+		User user = userService.findById(1);
+		SavingsAccount savingsAccount = user.getSavingsAccount();
+		CurrentAccount currentAccount = user.getCurrentAccount();
+		
+		model.addAttribute("user", user);
+		model.addAttribute("savingsAccount", savingsAccount);
+		model.addAttribute("currentAccount", currentAccount);
+		return "transfer";
+	}
+	
+	@RequestMapping(value = "/transfer", method = RequestMethod.POST)
+	public String transferToCurrentAccount(@ModelAttribute("amount") int amount) {
+		User user = userService.findById(1);
+		
+		SavingsAccount savingsAccount = user.getSavingsAccount();
+		
+		accountService.transferToSavings(amount, user, savingsAccount);
+		return "redirect:/transfer";
+	}
+
 	
 
 }
