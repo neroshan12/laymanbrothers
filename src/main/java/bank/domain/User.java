@@ -31,6 +31,7 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL)
 	public SavingsAccount savingsAccount;
 	
+
 	public String getFirstName() {
 		return firstName;
 	}
