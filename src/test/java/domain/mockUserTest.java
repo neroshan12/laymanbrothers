@@ -6,10 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import bank.domain.User;
 import bank.domain.mockUser;
 
-public class UserTest {
+public class mockUserTest {
 
 	private mockUser classUnderTest;
 	
