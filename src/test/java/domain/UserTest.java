@@ -84,38 +84,6 @@ public class UserTest {
 		classUnderTest.setPassword("neropassword");
 		assertEquals(result, classUnderTest.getPassword());
 	}
-		
-	@Test //test 
-	public void testTransferToSavings() {
-		double result = 50.00;
-		classUnderTest.depositCurrent(150.00);
-		classUnderTest.transferToSaving(100.00);
-		assertEquals(result, classUnderTest.currentAccount.getBalance());
-	}
-	
-	@Test //test 
-	public void testFailTransferToSavings() {
-		double result = 10;
-		classUnderTest.depositCurrent(10.00);
-		classUnderTest.transferToSaving(130.00);
-		assertEquals(result, classUnderTest.currentAccount.getBalance());
-	}
-	
-	@Test
-	public void testTransferToCurrent() {
-		double result = 50.00;
-		classUnderTest.depositSavings(150.00);
-		classUnderTest.transferToCurrent(100.00);
-		assertEquals(result, classUnderTest.savingsAccount.getBalance());
-	}
-	
-	@Test //test 
-	public void testFailTransferToCurrent() {
-		int result = 10;
-		classUnderTest.depositSavings(10.00);
-		classUnderTest.transferToCurrent(100.00);
-		assertEquals(result, classUnderTest.savingsAccount.getBalance());
-	}
 
 }
 
