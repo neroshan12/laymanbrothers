@@ -5,9 +5,9 @@ package bank.domain;
 public class mockUser {
 	private String firstName;
 	private String lastName;
-	@Column(name = "email", nullable = false, unique = true)
+//	@Column(name = "email", nullable = false, unique = true)
 	private String email;
-	@Column(name = "username", nullable = false, unique = true)
+//	@Column(name = "username", nullable = false, unique = true)
 	private String username;
 	private String address;
 	private String password;
