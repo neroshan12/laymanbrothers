@@ -32,6 +32,8 @@ public class SavingsAccount {
 		super();
 		this.balance = balance;
 	}
+	
+	public SavingsAccount() {}
 
 	public int getId() {
 		return id;
