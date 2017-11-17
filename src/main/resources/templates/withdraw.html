@@ -10,6 +10,10 @@
 </head>
 <body>
 
+<style>
+input { color:#000;}
+</style>
+
 <script src="jquery/jquery-3.2.1.min.js"></script>
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="stylishportfolio/js/stylish-portfolio.js"></script>
@@ -45,7 +49,7 @@
   <h5>Amount to withdraw:</h5>
   <div class="blackstyle">
 	<form th:action="@{/withdraw}" method="post">
-  <p class="blackstyle"><input th:value="${amount}" name="amount" id="amount" type="number"></input></p>
+  <input class="blackstyle" th:value="${amount}" name="amount" id="amount" type="number"></input>
   <button type="submit">Withdraw</button>
   </form>
   </div>
