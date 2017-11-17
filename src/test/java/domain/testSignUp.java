@@ -17,12 +17,12 @@ public class testSignUp extends TestCase {
     @Test
     public void testLinkToPage() throws Exception {
     		ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("excludeSwitches",Arrays.asList("ignore-certificate-errors"));
+  		options.setExperimentalOption("excludeSwitches",Arrays.asList("ignore-certificate-errors"));
     		String exePath = "chromedriver";
     		System.setProperty("webdriver.chrome.driver", exePath);    
     		this.driver = new ChromeDriver();
         this.driver.get("localhost:8080/homepage");
-        driver.findElement(By.xpath("//*[@id=\"top\"]/div/center/form/input")).click(); 
+        driver.findElement(By.xpath("//*[@id=\"signup\"]")).click(); 
         assertEquals("Please enter your details:",driver.findElement(By.className("whitestyle")).getText()); 
         this.driver.quit(); 
     }
@@ -35,7 +35,7 @@ public class testSignUp extends TestCase {
     		System.setProperty("webdriver.chrome.driver", exePath);    
     		this.driver = new ChromeDriver();
         this.driver.get("localhost:8080/homepage");
-        driver.findElement(By.xpath("//*[@id=\"top\"]/div/center/form/input")).click(); 
+        driver.findElement(By.xpath("//*[@id=\"signup\"]")).click(); 
         driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys("Joe"); 
         driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys("Ingram"); 
         driver.findElement(By.xpath("//*[@id=\"address\"]")).sendKeys("Croydon"); 
