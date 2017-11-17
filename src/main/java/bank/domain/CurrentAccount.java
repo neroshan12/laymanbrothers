@@ -33,6 +33,8 @@ public class CurrentAccount {
 		super();
 		this.balance = balance;
 	}
+	
+	public CurrentAccount() {}
 
 	public int getId() {
 		return id;

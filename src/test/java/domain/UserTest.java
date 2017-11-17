@@ -7,14 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import bank.domain.User;
+import bank.domain.mockUser;
 
 public class UserTest {
 
-	private User classUnderTest;
+	private mockUser classUnderTest;
 	
 	@Before
 	public void setUp() throws Exception {
-		classUnderTest = new User("Joe", "Ingram", "joe@joe.com", "gijoe", "Croydon", "Cronx");
+		classUnderTest = new mockUser("Joe", "Ingram", "joe@joe.com", "gijoe", "Croydon", "Cronx");
 	}
 
 	

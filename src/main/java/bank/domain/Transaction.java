@@ -36,7 +36,8 @@ public class Transaction {
 		this.counterparty = counterparty;
 	}
 
-
+	public Transaction() {}
+	
 	public String getDescription() {
 		return description;
 	}
