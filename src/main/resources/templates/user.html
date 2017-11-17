@@ -38,6 +38,8 @@
 </nav>
 
  <br></br>
+ <br></br>
+ <br></br>
 
    <header class="header2" id="userheader">
      <div class="text-vertical-center">
@@ -50,6 +52,7 @@
     <div class="col-md-6 col-sm-6">
       <div class="container text-left">
       <h2>Here are your details:</h2>
+      <br></br>
       <h4 class="blackstyle"> Your e-mail: </h4><h5 class="whitestyle" th:text="${user.getEmail()}"> </h5>
       <h4 class="blackstyle"> Your username: </h4><h5 class="whitestyle" th:text="${user.getUsername()}">  </h5>
       <h4 class="blackstyle"> Your address: </h4><h5 class="whitestyle" th:text="${user.getAddress()}">  </h5>
@@ -60,8 +63,80 @@
        <br></br>
       <h3>Would you like to check your accounts?</h3>
        <br></br>
-    <a class="greystyle" href="/balance">View my accounts</a>
+  <!--  <a class="greystyle" href="/balance">View my accounts</a> -->
+    <button type="submit" value="View my accounts" id="viewaccounts" href="/balance" class="btn btn-dark btn-lg js-scroll-trigger">View my accounts</button>
   </div>
 </div>
+
+
+<div>
+  <hr></hr>
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+
+  <h2 text-align="center">Where to find us: </h2>
+<section id="contact" class="map">
+   <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB7u46Wv5x1MTqXwsA4I4qoNNEbK0km8Sg&amp;q=Makers+Academy,London;"></iframe>
+  <small>
+    <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+  </small>
+</section>
+</div>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center">
+        <h4>
+          <strong>Layman Brothers</strong>
+        </h4>
+        <p size="+2" >Makers Academy
+          <br></br>50 Commercial St,
+          <br></br>London<br></br>E1 6LT</p>
+        <ul class="list-unstyled">
+
+          <li>
+            <i class="fa fa-envelope-o fa-fw"></i>
+            <a href="mailto:laymanbrothersbank@gmail.com">laymanbrothersbank@gmail.com</a>
+          </li>
+        </ul>
+        <br></br>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-facebook fa-fw fa-3x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-twitter fa-fw fa-3x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-dribbble fa-fw fa-3x"></i>
+            </a>
+          </li>
+        </ul>
+        <hr class="small">
+        <p class="text-muted">Copyright &copy; Layman Brothers 2017</p>
+        </hr>
+      </div>
+    </div>
+  </div>
+  <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
+    <i class="fa fa-chevron-up fa-fw fa-1x"></i>
+  </a>
+</footer>
+
+
 </body>
 </html>
