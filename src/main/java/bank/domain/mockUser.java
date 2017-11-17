@@ -5,9 +5,8 @@ package bank.domain;
 public class mockUser {
 	private String firstName;
 	private String lastName;
-//	@Column(name = "email", nullable = false, unique = true)
 	private String email;
-//	@Column(name = "username", nullable = false, unique = true)
+	private String email;
 	private String username;
 	private String address;
 	private String password;
@@ -24,8 +23,6 @@ public class mockUser {
 	        setPassword(password);
 		// TODO Auto-generated constructor stub
 	}
-
-	
 
 	public String getAddress() {
 		return address;
