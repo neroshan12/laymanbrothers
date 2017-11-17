@@ -39,29 +39,32 @@
       <br></br>
       <br></br>
       <br></br>
-    <h1 class='heading' style="padding-top: 80px;">Welcome to Layman Brothers</h1>
-    
-     <p th:text="${user.getFirstName()}"> Keith</p>
-    <h4 class='statement'>Your Current Account balance is</h4>
+      <div>
+   <h1 class="header2" id="userheader">Welcome to Layman Brothers, <span th:text="${user.getFirstName()}"></span>&nbsp;<span th:text="${user.getLastName()}"></span></h1>
+    <h3 class='statement'>Your Current Account balance is</h3>
     
     <div class="current_account">
-    	<p>&#163;<span id="currentbalance" th:text="${currentAccount.getBalance()}">0.00</span></p>
+    	<h3>&#163;<span id="currentbalance" th:text="${currentAccount.getBalance()}">0.00</span></h3>
         <div class="actions">
         	<a class="btn btn-default" th:href="@{/currentAccount}">View Account</a>
      		<a class="btn btn-default" th:href="@{/withdraw}">Withdraw</a>
         	<a class="btn btn-default" th:href="@{/deposit}">Deposit</a>
      	</div>
     </div>
-    
+    <br></br>
+    <br></br>
+ 
     <div class="saving_account">
-    	<h4 class='statement'>Your Savings Account balance is</h4>
-    	<p>&#163;<span id="savingsbalance" th:text="${savingsAccount.getBalance()}">0.00</span></p>
+    	<h3 class='statement'>Your Savings Account balance is</h3>
+    	<h3>&#163;<span id="savingsbalance" th:text="${savingsAccount.getBalance()}">0.00</span></h3>
    		<div class="actions">
      		<a class="btn btn-default">View Account</a>
     		<a class="btn btn-default" th:href="@{/withdraw}">Withdraw</a>
     		<a class="btn btn-default" th:href="@{/deposit}">Deposit</a>
     	</div>
     </div>
+    </div>
+    
     <br></br>
     <br></br>
      <!-- Map -->
