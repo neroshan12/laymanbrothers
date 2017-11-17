@@ -8,34 +8,103 @@
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
     <link href="../static/css/currentAccount.css" th:href="@{/css/currentAccount.css}" rel="stylesheet" />
 </head>
+	<style>
+	
+		h1
+		{
+			margin-top:40px;
+		}
+		
+		table
+		{
+			border-collapse: collapse;
+			width: 100%;
+		}
+		td,th
+		{
+			padding:5px 10px;
+			border:solid 1px #000;
+		}
+		th
+		{
+			text-align:center;
+		}
+		
+		input,button
+		{
+			color:#000;
+		}
+	</style>
 <body>
-
-<script src="jquery/jquery-3.2.1.min.js"></script>
-    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script src="stylishportfolio/js/stylish-portfolio.js"></script>
-    
-    <p>Welcome</p><p th:text="${user.getFirstName()}">!</p>
-    
-    <h4 class='statement'>Your Current Account balance is</h4>
-    
-    <p id="currentbalance" th:text="${currentAccount.getBalance()}"></p>
-    
-    <h1 class='heading'>Your Statement</h1>
-    
-    <ul data-th-each="transaction : ${user.currentAccount.transactions}">
-    		<li data-th-text="${transaction.amount}">...</li>
-    		<li style="list-style:none" data-th-text="${transaction.description}">...</li>
-    		<li	style="list-style:none" data-th-text="${transaction.transactionDate}">...</li>
-    		<li	style="list-style:none" data-th-text="${transaction.description}">...</li>
-    		<li	style="list-style:none" data-th-text="${transaction.counterparty}">...</li>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">LAYMAN BROTHERS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Premier</a></li>
+      <li><a href="#">Wealth Management</a></li>
+      <li><a href="#">Invest</a></li>
+      <li><a href="#">Fraud</a></li>
+      <li><a href="#">Mortgage</a></li>
+      <li><a href="#">Insure</a></li>
+      <li><a href="#">Credit card</a></li>
+      <li><a href="#">Loans</a></li>
+      <li><a href="#">Banking with us</a></li>
+      <li><a href="#">Branch finder</a></li>
+      <li><a href="#">Contact us</a></li>
     </ul>
-    
-    <h1> Transfer to Savings Account </h1>
-    <form th:action="@{/transfer}" method="post">
-    		<input th:value="${amount}" name="amount" id="amount" type="number" />
-    		<button type="submit">Transfer</button>
-    </form>
-    
-    
-</body>
+  </div>
+</nav>
+
+	<p>Welcome</p>
+	<p th:text="${user.getFirstName()}">!</p>
+	    
+	<h4 class='statement'>Your Current Account balance is</h4>
+	<p style="font-size:30px; font-weight:bold;">&#163;<span id="currentbalance" th:text="${currentAccount.getBalance()}"></span></p>
+	<div class="row">
+	<h1> Transfer to Savings Account </h1>
+	<form th:action="@{/transfer}" method="post" >
+		<div class="form-group">
+			<label for="amount">Amount ( £ )</label>
+			<input th:value="${amount}" name="amount" id="amount" type="number"  />
+	    		<button type="submit" id="Submit" class="btn btn-default">Transfer</button>
+	    	</div>
+	</form>
+	</div>
+	 
+	<h1 class='heading'>Your Statement</h1>
+	<!-- <ul data-th-each="transaction : ${user.currentAccount.transactions}">
+		<li data-th-text="${transaction.amount}">...</li>
+		<li style="list-style:none" data-th-text="${transaction.description}">...</li>
+		<li	style="list-style:none" data-th-text="${transaction.transactionDate}">...</li>
+		<li	style="list-style:none" data-th-text="${transaction.description}">...</li>
+		<li	style="list-style:none" data-th-text="${transaction.counterparty}">...</li>
+	</ul> -->
+	<div class="row">
+		<div class="col-sm-offset-2 col-sm-8">
+			<table>
+				<tr>
+					<th>Amount</th>
+					<th>Description</th>
+					<th>Transaction Date</th>
+					<th> Recipient</th>
+				</tr>
+				<tr th:each="transaction : ${user.currentAccount.transactions}">
+					<td>£<span th:text="${transaction.amount}">...</span></td>
+					<td th:text="${transaction.description}">...</td>
+					<td th:text="${transaction.transactionDate}">...</td>
+					<td th:text="${transaction.counterparty}">...</td>
+				</tr>
+			</table>	
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script src="stylishportfolio/js/stylish-portfolio.js"></script>   
+	</body>
 </html>
