@@ -22,16 +22,14 @@ public class CurrentAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	public int balance;
+	public double balance;
 	
 	@OneToMany(mappedBy = "currentAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
 	public List<Transaction> transactions;
-	
-	public CurrentAccount() {
-	}
 
-	public CurrentAccount(int balance) {
+
+	public CurrentAccount(double balance) {
 		super();
 		this.balance = balance;
 	}
@@ -40,7 +38,7 @@ public class CurrentAccount {
 		return id;
 	}
 	
-	public int getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 	
@@ -48,13 +46,13 @@ public class CurrentAccount {
 		this.balance = balance;
 	}
 
-	public List<Transaction> getTransactions() {
-		return transactions;
-	}
-
-	public void setTransactions(List<Transaction> transactions) {
-		this.transactions = transactions;
-	}
+//	public List<Transaction> getTransactions() {
+//		return transactions;
+//	}
+//
+//	public void setTransactions(List<Transaction> transactions) {
+//		this.transactions = transactions;
+//	}
 
 	public static double getDailyInterest() {
 		return DAILY_INTEREST;
