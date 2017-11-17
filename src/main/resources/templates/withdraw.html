@@ -9,10 +9,11 @@
     <link href="../static/css/withdraw.css" th:href="@{/css/withdraw.css}" rel="stylesheet" />
 </head>
 <body>
+
 <script src="jquery/jquery-3.2.1.min.js"></script>
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="stylishportfolio/js/stylish-portfolio.js"></script>
-    
+
    <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -35,15 +36,25 @@
     </ul>
   </div>
 </nav>
-    
-    
-    <p style="padding-top: 80px;">Welcome</p><p th:text="${user.getFirstName()}"></p>
- 	<p>Amount to withdraw:</p>
+
+<!-- The bones of the body -->
+
+<div>
+    <h2 style="padding-top: 80px;">Please select an amount to withdraw, <span th:text="${user.getFirstName()}"></span></h2>
+  <br></br>
+  <h5>Amount to withdraw:</h5>
+  <div class="blackstyle">
 	<form th:action="@{/withdraw}" method="post">
-    <input th:value="${amount}" name="amount" id="amount" type="number" />
-    <button type="submit">Withdraw</button>
-    </form>
-    
-    <a th:href="@{/balance}">Go Back to Account</a>
+  <p class="blackstyle"><input th:value="${amount}" name="amount" id="amount" type="number"></input></p>
+  <button type="submit">Withdraw</button>
+  </form>
+  </div>
+
+
+  <div class="greystyle">
+    <a th:href="@{/balance}"> Go Back to Account </a>
+  </div>
+
+</div>
 </body>
 </html>
