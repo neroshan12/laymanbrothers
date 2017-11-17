@@ -31,3 +31,11 @@ a.greystyle{
 .formpad {
   padding: 100px 0;
 }
+
+.greystyle{
+  color: #d9dce0
+}
+
+.blackstyle{
+  color: #000000
+}
